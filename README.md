@@ -2,27 +2,20 @@
 
 Production website for **Vandan Distributors** (radiology print & imaging workflow materials).
 
-Built with **Next.js + React**, using the Framer “Sealed Edition” UI layout and Vandan business content.
+Built with **Next.js + React**.
 
 ## Folder layout
 
 ```
-project3/
-├── website/          ← Main app (run & deploy this)
-│   ├── src/
-│   │   ├── app/          Routes (/, /about, /work/*)
-│   │   ├── components/   Framer page shell
-│   │   ├── content/      Business copy & contact info
-│   │   └── lib/          Content patching + extracted Framer HTML
-│   ├── public/images/    Site images
-│   └── scripts/          Re-extract from backup (optional)
-└── backup/           ← Legacy sources (archived, not used at runtime)
+├── src/                 App routes, components, content
+├── public/              Site images & PDF downloads
+├── assets/              Source PDFs & images (synced into public/)
+└── scripts/             Asset sync utilities
 ```
 
 ## Quick start
 
 ```powershell
-cd website
 npm install
 npm run dev
 ```
@@ -32,22 +25,18 @@ Open **http://localhost:3000**
 ## Production
 
 ```powershell
-cd website
 npm run build
 npm start
 ```
 
 ## Edit content
 
-Update **`website/src/content/site.ts`** — brand name, hero text, contact details, portfolio labels, etc.
+Update **`src/content/site.ts`** — brand name, hero text, contact details, product info, etc.
 
-## Re-sync Framer HTML from backup
-
-Only needed if you change files under `backup/framer-mirror/`:
+## Sync assets from source files
 
 ```powershell
-cd website
-npm run prepare:framer
+npm run sync:assets
 ```
 
 ## Pages
@@ -55,8 +44,18 @@ npm run prepare:framer
 | URL | Description |
 |-----|-------------|
 | `/` | Home |
-| `/about` | Why Us / services |
-| `/work/iphone-15` | Portfolio item |
-| `/work/unsweetned` | Portfolio item |
-| `/work/actr-acre` | Portfolio item |
-| `/work/editorial` | Portfolio item |
+| `/about` | About Vandan Distributors |
+| `/products` | Product catalogue |
+| `/products/contrast-media` | Contrast media |
+| `/products/x-ray-films` | X-ray films |
+| `/products/other-products` | Other products |
+| `/products/printing-solutions` | Accurate printing solutions |
+| `/testimonials` | Customer testimonials |
+| `/contact` | Contact form |
+| `/downloads` | Brochures & PDFs |
+
+## Deploy (Vercel)
+
+Connect this repo to Vercel — Next.js is auto-detected at the repo root. No custom output directory needed.
+
+Optional env var: `NEXT_PUBLIC_SITE_URL` = your production URL.
