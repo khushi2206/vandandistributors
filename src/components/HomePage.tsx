@@ -22,7 +22,7 @@ import { site } from "@/content/site";
 import { testimonials } from "@/content/testimonials";
 
 const printImages = {
-  reportPrint: "/images/products/20250913_130304.jpg.jpeg",
+  heroPrimary: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM.jpeg",
   printMedia: "/images/products/20250913_131833.jpg.jpeg",
   contrastPrint: "/images/products/20250913_131936.jpg.jpeg",
   filmPack: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM.jpeg",
@@ -41,15 +41,15 @@ const reveal = {
 
 const heroSlides = [
   {
-    eyebrow: "Medical imaging print solutions",
-    title: "Premium radiology reports, films, and print workflows.",
-    copy: "Vandan Distributors helps radiologists, hospitals, and diagnostic centres present MRI, CT, X-ray, and diagnostic reports with confidence.",
-    image: printImages.reportPrint,
+    eyebrow: "Medical imaging solutions",
+    title: "Premium radiology films and imaging workflows.",
+    copy: "Vandan Distributors helps radiologists, hospitals, and diagnostic centres present MRI, CT, X-ray, and diagnostic outputs with confidence.",
+    image: printImages.heroPrimary,
   },
   {
-    eyebrow: "Printed CT scan reports",
-    title: "Clean printed reports for confident clinical review.",
-    copy: "Focused radiology supplies, contrast media, and printing solutions for teams that need quality, consistency, and responsive guidance.",
+    eyebrow: "Printed CT scan outputs",
+    title: "Clean printed outputs for confident clinical review.",
+    copy: "Focused radiology supplies, contrast media, and solutions for teams that need quality, consistency, and responsive guidance.",
     image: printImages.printMedia,
   },
   {
@@ -59,18 +59,18 @@ const heroSlides = [
     image: printImages.filmPack,
   },
   {
-    eyebrow: "MRI and CT reports",
-    title: "Clear printed imaging reports for professional review.",
-    copy: "Medical printing media and MIPS workflows designed around readable reports, practical cost control, and dependable service.",
+    eyebrow: "MRI and CT outputs",
+    title: "Clear printed imaging output for professional review.",
+    copy: "Medical printing media and MIPS workflows designed around readable imaging output, practical cost control, and dependable service.",
     image: printImages.contrastPrint,
   },
 ];
 
 const partnerStats = [
-  { value: "2015", label: "Operating since" },
+  { value: "2007", label: "Operating Since" },
   { value: "MIPS", label: "Per-print model" },
   { value: "MRI / CT / X-Ray", label: "Workflow coverage" },
-  { value: "Pan-India", label: "Supply support" },
+  { value: "Pan India", label: "Supply support" },
 ];
 
 const reasons = [
@@ -105,9 +105,9 @@ const featuredProducts = [
     href: "/products/x-ray-films",
   },
   {
-    title: "MRI / CT Print Media",
-    tag: "Printing",
-    copy: "Report and image print support for multimodality diagnostic centres.",
+    title: "MRI / CT Solution",
+    tag: "Solutions",
+    copy: "Imaging output support for multimodality diagnostic centres.",
     image: printImages.printMedia,
     href: "/products/printing-solutions",
   },
@@ -124,7 +124,7 @@ const categoryPrintImages: Record<string, string> = {
   "contrast-media": printImages.contrastPrint,
   "x-ray-films": printImages.filmPack,
   "other-products": printImages.printSheet,
-  "printing-solutions": printImages.reportPrint,
+  "printing-solutions": printImages.printMedia,
 };
 
 const printingHighlights = [
@@ -185,7 +185,7 @@ export function HomePage() {
                   <div className="vandan-hero__actions">
                     <a className="vandan-btn vandan-btn--primary" href={whatsappHref} target="_blank" rel="noreferrer">
                       <MessageCircle className="size-4" />
-                      Request consultation
+                      Request Consultation
                     </a>
                     <Link className="vandan-btn vandan-btn--secondary" href="/products">
                       Explore products
@@ -226,7 +226,7 @@ export function HomePage() {
           <h2>Vandan Distributors supports the imaging teams behind accurate diagnoses.</h2>
           <p>
             We specialize in radiology, diagnostic imaging products, X-ray films, contrast media,
-            and medical printing solutions for doctors, radiologists, hospitals, and diagnostic centres.
+            and medical solutions for doctors, radiologists, hospitals, and diagnostic centres.
           </p>
         </motion.div>
         <div className="vandan-stat-grid">
@@ -250,7 +250,7 @@ export function HomePage() {
             <motion.article className="vandan-category-card" key={category.slug} {...reveal} transition={{ ...reveal.transition, delay: index * 0.06 }}>
               <Link href={category.href}>
                 <div className="vandan-category-card__image">
-                  <Image src={categoryPrintImages[category.slug] ?? printImages.reportPrint} alt={category.title} fill sizes="(max-width: 900px) 100vw, 25vw" className="object-cover" />
+                  <Image src={categoryPrintImages[category.slug] ?? printImages.heroPrimary} alt={category.title} fill sizes="(max-width: 900px) 100vw, 25vw" className="object-cover" />
                 </div>
                 <div className="vandan-category-card__body">
                   <span>{category.tag}</span>
@@ -310,16 +310,16 @@ export function HomePage() {
       <section className="vandan-printing">
         <motion.div className="vandan-printing__media" {...reveal}>
           <Image
-            src={printImages.reportPrint}
-            alt="Medical imaging report printing presentation"
+            src={printImages.printMedia}
+            alt="Medical imaging solution presentation"
             fill
             sizes="(max-width: 1024px) 100vw, 46vw"
             className="object-cover"
           />
         </motion.div>
         <motion.div className="vandan-printing__copy" {...reveal}>
-          <p className="vandan-eyebrow">Healthcare printing solutions</p>
-          <h2>Professional medical printing without the capital burden.</h2>
+          <p className="vandan-eyebrow">Healthcare solutions</p>
+          <h2>Professional medical solutions without the capital burden.</h2>
           <p>
             Vandan Distributors MIPS brings printer, software, ink, media, maintenance, and service
             into one dependable workflow for MRI, CT, ultrasound, X-ray, PET-CT, and OPG output.
@@ -330,7 +330,7 @@ export function HomePage() {
             ))}
           </div>
           <Link className="vandan-btn vandan-btn--secondary" href="/products/printing-solutions">
-            View printing solutions
+            View solutions
             <ArrowRight className="size-4" />
           </Link>
         </motion.div>
@@ -349,8 +349,8 @@ export function HomePage() {
               </div>
               <p>&ldquo;{item.quote.replaceAll("Vandan Distributors", "Vandan Distributors")}&rdquo;</p>
               <div>
-                <strong>{item.role}</strong>
-                <span>{item.facility} / {item.modality}</span>
+                <strong>{item.author}</strong>
+                <span>{item.role}, {item.facility} / {item.modality}</span>
               </div>
             </motion.article>
           ))}
@@ -386,3 +386,5 @@ export function HomePage() {
     </div>
   );
 }
+
+

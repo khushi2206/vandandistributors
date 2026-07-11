@@ -45,42 +45,42 @@ export const downloads: DownloadItem[] = [
   },
   {
     id: "ct-1",
-    title: "CT Report Sample 1",
+    title: "CT Sample 1",
     description: "CT diagnostic report print sample for client reference.",
     category: "datasheet",
     file: "/downloads/CT-1.pdf",
   },
   {
     id: "ct-2",
-    title: "CT Report Sample 2",
+    title: "CT Sample 2",
     description: "CT diagnostic report print sample — alternate layout.",
     category: "datasheet",
     file: "/downloads/CT-2.pdf",
   },
   {
     id: "ct-3",
-    title: "CT Report Sample 3",
+    title: "CT Sample 3",
     description: "CT diagnostic report print sample — multi-series layout.",
     category: "datasheet",
     file: "/downloads/CT-3.pdf",
   },
   {
     id: "mri-1",
-    title: "MRI Report Sample 1",
+    title: "MRI Sample 1",
     description: "MRI diagnostic report print sample for client reference.",
     category: "datasheet",
     file: "/downloads/MRI-1.pdf",
   },
   {
     id: "mri-2",
-    title: "MRI Report Sample 2",
+    title: "MRI Sample 2",
     description: "MRI diagnostic report print sample — brain study layout.",
     category: "datasheet",
     file: "/downloads/MRI-2.pdf",
   },
   {
     id: "mri-3",
-    title: "MRI Report Sample 3",
+    title: "MRI Sample 3",
     description: "MRI diagnostic report print sample — spine study layout.",
     category: "datasheet",
     file: "/downloads/MRI-3.pdf",
@@ -135,3 +135,4 @@ export const downloadCategories = [
   { id: "brochure", label: "Brochures" },
   { id: "datasheet", label: "Technical Datasheets" },
 ] as const;
+

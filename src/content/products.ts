@@ -29,10 +29,11 @@ export const productCategories = [
   {
     slug: "printing-solutions",
     href: "/products/printing-solutions",
-    title: "Printing Solutions",
+    title: "Solutions",
     description:
       "End-to-end MIPS for MRI, CT, Ultrasound, X-Ray, PET-CT, and OPG - printer, software, ink, media, and service on per-print billing.",
     image: "/images/products/20250913_130304.jpg.jpeg",
     tag: "MIPS",
   },
 ] as const;
+

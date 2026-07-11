@@ -7,7 +7,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CTASection } from "@/components/CTASection";
 import { FadeIn } from "@/components/FadeIn";
-import { Badge } from "@/components/ui/badge";
+import { FlaskConical, PackageCheck, TestTube2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
@@ -54,28 +54,33 @@ export default function ContrastMediaPage() {
           description="Detailed concentration and pack size reference for contrast media products available through Vandan Distributors."
         />
         <FadeIn>
-          <Card className="glossy-card overflow-hidden border-0 ring-0">
-            <CardContent className="p-0">
-              <div className="spec-table">
-                <div className="spec-table__row spec-table__row--header">
-                  <div>Product</div>
-                  <div>Active Ingredient</div>
-                  <div>Concentration</div>
-                  <div>Pack Sizes</div>
-                </div>
-                {contrastSpecsTable.map((row, idx) => (
-                  <div key={idx} className="spec-table__row">
-                    <div data-label="Product">{row.product}</div>
-                    <div data-label="Active Ingredient">{row.ingredient}</div>
-                    <div data-label="Concentration">
-                      <Badge variant="secondary">{row.iodine}</Badge>
+          <div className="spec-card-grid">
+            {contrastSpecsTable.map((row) => (
+              <Card key={`${row.product}-${row.ingredient}-${row.iodine}`} className="spec-card glossy-card border-0 ring-0">
+                <CardContent className="spec-card__content">
+                  <div className="spec-card__header">
+                    <span className="spec-card__icon"><TestTube2 className="size-5" /></span>
+                    <div>
+                      <h3>{row.product}</h3>
+                      <p>{row.ingredient}</p>
                     </div>
-                    <div data-label="Pack Sizes">{row.pack}</div>
                   </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                  <div className="spec-card__meta">
+                    <div>
+                      <FlaskConical className="size-4" />
+                      <span>Concentration</span>
+                      <strong>{row.iodine}</strong>
+                    </div>
+                    <div>
+                      <PackageCheck className="size-4" />
+                      <span>Pack sizes</span>
+                      <strong>{row.pack}</strong>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </FadeIn>
       </section>
 
@@ -83,3 +88,5 @@ export default function ContrastMediaPage() {
     </PageShell>
   );
 }
+
+

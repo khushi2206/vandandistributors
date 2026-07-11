@@ -8,16 +8,16 @@ import { CTASection } from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: `Testimonials | ${site.brand.name}`,
-  description: "Customer reviews and success stories from hospitals and diagnostic centres using Vandan Distributors.",
+  description: "Customer testimonials from hospitals, diagnostic centres, and healthcare buyers across India.",
 };
 
-export default function TestimonialsPage() {
+export default function GoogleReviewsPage() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="Client Feedback"
-        title="Testimonials"
-        description="Hospitals, diagnostic centres, and radiology departments share their experience with Vandan Distributors products and MIPS services."
+        eyebrow="Customer Testimonials"
+        title="Trusted by healthcare buyers across India"
+        description="Feedback from hospitals, diagnostic centres, and radiology teams who rely on Vandan Distributors for contrast media, films, and MIPS solutions."
       />
 
       <section className="medical-section">
@@ -32,3 +32,5 @@ export default function TestimonialsPage() {
     </PageShell>
   );
 }
+
+

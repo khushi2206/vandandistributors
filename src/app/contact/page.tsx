@@ -51,7 +51,7 @@ export default function ContactPage() {
                     <div>
                       <strong>Phone</strong>
                       <a href={site.brand.phoneHref}>{site.brand.phone}</a>
-                      <a href={`tel:${site.brand.phoneAlt.replace(/\s/g, "")}`}>{site.brand.phoneAlt}</a>
+
                     </div>
                   </div>
                   <div className="contact-info-item">
@@ -87,7 +87,7 @@ export default function ContactPage() {
               <div className="contact-map-placeholder">
                 <iframe
                   title="Vandan Distributors location"
-                  src="https://maps.google.com/maps?q=14%20First%20Floor%2C%20Municipal%20Market%2C%20G.D%20Road%2C%20Opp.%20Maruti%20Nandan%20Complex%2C%20Vijay%20Para%2C%20Visnagar%2C%20Gujarat%20384315%2C%20India&output=embed"
+                  src={site.brand.mapsEmbedUrl}
                   width="100%"
                   height="360"
                   style={{ border: 0, borderRadius: "16px" }}
@@ -102,3 +102,5 @@ export default function ContactPage() {
     </PageShell>
   );
 }
+
+

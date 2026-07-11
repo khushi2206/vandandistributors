@@ -38,9 +38,9 @@ export function SiteFooter() {
 
         <div className="site-footer__col">
           <h4>Solutions</h4>
-          <Link href="/products/printing-solutions">MRI Printing</Link>
-          <Link href="/products/printing-solutions">CT Scan Printing</Link>
-          <Link href="/products/printing-solutions">Ultrasound Printing</Link>
+          <Link href="/products/printing-solutions">MRI Solution</Link>
+          <Link href="/products/printing-solutions">CT Scan Solution</Link>
+          <Link href="/products/printing-solutions">Ultrasound Solution</Link>
           <Link href="/products/contrast-media">Contrast Media</Link>
         </div>
       </div>

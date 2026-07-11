@@ -1163,3 +1163,116 @@
     flex: 1 1 100%;
   }
 }
+
+/* Modern product specifications */
+.spec-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap);
+  width: min(100% - (var(--site-gutter) * 2), var(--site-container));
+  max-width: var(--site-container);
+  margin: 0 auto;
+}
+
+.spec-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.spec-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  height: 100%;
+  padding: var(--card-pad);
+}
+
+.spec-card__header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.spec-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 10px;
+  background: rgba(12, 74, 110, 0.08);
+  color: var(--color-primary);
+}
+
+.spec-card__header h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+.spec-card__header p {
+  margin-top: 0.25rem;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.spec-card__meta {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: auto;
+}
+
+.spec-card__meta > div {
+  display: grid;
+  grid-template-columns: auto minmax(6rem, 0.65fr) minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: center;
+  padding: 0.72rem 0.8rem;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.spec-card__meta svg {
+  color: var(--color-medical);
+}
+
+.spec-card__meta span {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.spec-card__meta strong {
+  min-width: 0;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+@media (max-width: 1023px) {
+  .spec-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .spec-card-grid {
+    grid-template-columns: 1fr;
+    width: min(100% - 2rem, var(--site-container));
+  }
+
+  .spec-card__meta > div {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .spec-card__meta strong {
+    grid-column: 2;
+  }
+}

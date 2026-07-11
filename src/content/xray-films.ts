@@ -27,7 +27,7 @@ export const dryFilmProducts: FilmProduct[] = [
       { size: '14" x 17"', packSize: "100 sheets/box" },
     ],
     specs: "Blue polyester base, high optical density, anti-static coating, DICOM-compatible dry imager output.",
-    image: "/images/radiology/rad-10-blue-medical-film.png",
+    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM.jpeg",
   },
   {
     id: "dry-clear-base",
@@ -42,7 +42,7 @@ export const dryFilmProducts: FilmProduct[] = [
       { size: '14" x 17"', packSize: "100 sheets/box" },
     ],
     specs: "High spatial resolution, stable tone reproduction, clear base finish for selected diagnostic print workflows.",
-    image: "/images/radiology/rad-04-print-films.png",
+    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM-1.jpeg",
   },
   {
     id: "premium-blue-base",
@@ -57,7 +57,7 @@ export const dryFilmProducts: FilmProduct[] = [
       { size: '14" x 17"', packSize: "100 sheets/box" },
     ],
     specs: "High-resolution output support, long archival life, consistent blue diagnostic hue.",
-    image: "/images/radiology/rad-02-xray-lightbox.png",
+    image: "/images/products/WhatsApp-Image-2026-06-02-at-10.04.29-PM.jpeg",
   },
 ];
 
@@ -76,5 +76,6 @@ export const vmsManualFilms = {
   ],
   specs:
     "Green-sensitive emulsion for manual processing, high contrast, compatible with standard developer/fixers. Suitable for general radiography and mobile X-ray units.",
-  image: "/images/radiology/fresh-01-xray-panel.jpeg",
+  image: "/images/products/WhatsApp-Image-2026-06-02-at-10.04.30-PM.jpeg",
 };
+

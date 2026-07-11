@@ -18,7 +18,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: `Printing Solutions | ${site.brand.name}`,
+  title: `Solutions | ${site.brand.name}`,
   description: "Medical Imaging Print Solutions (MIPS) — MRI, CT, Ultrasound, X-Ray, PET-CT, and OPG printing with per-print billing and zero capex.",
 };
 
@@ -26,7 +26,7 @@ export default function PrintingSolutionsPage() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="Medical Imaging Print Solutions"
+        eyebrow="Medical Imaging Solutions"
         title={mipsOverview.title}
         description={mipsOverview.description}
       />
@@ -61,7 +61,7 @@ export default function PrintingSolutionsPage() {
       {/* Modality Solutions */}
       <section className="medical-section medical-section--alt">
         <SectionHeading
-          title="Modality print solutions"
+          title="Modality solutions"
           description="Dedicated DICOM print workflows for every major imaging modality."
         />
         <div className="printing-solutions-grid">
@@ -110,7 +110,7 @@ export default function PrintingSolutionsPage() {
       {/* Coverage */}
       <section className="medical-section">
         <SectionHeading
-          title="Pan-India customer base"
+          title="Pan India customer base"
           description="Serving healthcare facilities across major states with offices in key cities."
         />
         <StaggerGrid className="coverage-grid">
@@ -139,3 +139,4 @@ export default function PrintingSolutionsPage() {
     </PageShell>
   );
 }
+

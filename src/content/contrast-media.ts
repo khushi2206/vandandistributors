@@ -44,7 +44,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Non-ionic iodinated contrast medium for intravenous use in CT, angiography, and urography. Low osmolality profile for improved patient tolerance.",
     iodineConc: "300 / 340 / 370 mg/mL",
     packs: ["20 mL amp", "50 mL vial", "100 mL vial"],
-    image: "/images/radiology/rad-26-imaging-supplies.png",
+    image: "/images/products/20250913_131936.jpg.jpeg",
     brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
   },
   {
@@ -57,7 +57,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Widely used non-ionic contrast agent for CT, IV urography, angiocardiography, and peripheral angiography with excellent safety profile.",
     iodineConc: "300 / 350 mg/mL",
     packs: ["20 mL amp", "50 mL vial", "100 mL vial", "200 mL vial"],
-    image: "/images/radiology/rad-10-blue-medical-film.png",
+    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM.jpeg",
     brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
   },
   {
@@ -70,7 +70,7 @@ export const contrastProducts: ContrastProduct[] = [
       "High-concentration ionic contrast medium for angiography, IV urography, and CT applications requiring 370 mg/mL iodine.",
     iodineConc: "370 mg/mL",
     packs: ["20 mL amp", "50 mL vial", "100 mL vial"],
-    image: "/images/radiology/rad-04-print-films.png",
+    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM-1.jpeg",
   },
   {
     id: "trazograf-60",
@@ -82,7 +82,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Ionic contrast agent at 282 mg/mL iodine concentration for general radiographic and urographic procedures.",
     iodineConc: "282 mg/mL",
     packs: ["20 mL amp", "50 mL vial", "100 mL vial"],
-    image: "/images/radiology/rad-04-print-films.png",
+    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM-1.jpeg",
   },
   {
     id: "cardiolek",
@@ -94,7 +94,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Iso-osmolar contrast medium ideal for cardiac angiography, coronary interventions, and high-risk patients requiring optimal tolerability.",
     iodineConc: "320 mg/mL",
     packs: ["50 mL vial", "100 mL vial"],
-    image: "/images/radiology/fresh-02-brain-mri-grid.jpeg",
+    image: "/images/products/20250913_131833.jpg.jpeg",
   },
   {
     id: "gastrolek",
@@ -130,7 +130,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Gadolinium-based MRI contrast agent for enhancement of lesions, vascular structures, and inflammatory tissue in brain and body MRI.",
     iodineConc: "0.5 mmol/mL",
     packs: ["10 mL vial", "20 mL vial"],
-    image: "/images/radiology/fresh-02-brain-mri-grid.jpeg",
+    image: "/images/products/20250913_131833.jpg.jpeg",
   },
   {
     id: "gadotrast",
@@ -142,7 +142,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Macrocyclic gadolinium chelate offering high stability and excellent contrast enhancement for MRI across body regions.",
     iodineConc: "0.5 mmol/mL",
     packs: ["10 mL vial", "20 mL vial"],
-    image: "/images/radiology/fresh-03-diagnostic-archive.jpeg",
+    image: "/images/products/20250913_130304.jpg.jpeg",
   },
 ];
 
@@ -160,3 +160,4 @@ export const contrastSpecsTable = [
   { product: "Trazogastro Oral", ingredient: "Meglumine & Sodium Diatrizoate", iodine: "370 mg/mL", pack: "30 mL / 100 mL bottle" },
   { product: "Gastrolek Oral", ingredient: "Sodium Diatrizoate", iodine: "249.64 mg/mL", pack: "30 mL / 100 mL bottle" },
 ];
+

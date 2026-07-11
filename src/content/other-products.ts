@@ -21,7 +21,7 @@ export const otherProducts: OtherProduct[] = [
     name: "Microbar 300 mg",
     description: "Barium sulphate contrast preparation for GI radiography and fluoroscopy studies.",
     category: "Barium & GI Contrast",
-    image: "/images/radiology/rad-26-imaging-supplies.png",
+    image: "/images/products/20250913_131936.jpg.jpeg",
     brochure: "/downloads/broucher-120825.pdf",
   },
   {
@@ -37,7 +37,7 @@ export const otherProducts: OtherProduct[] = [
     name: "Microbar 3.5 kg Powder",
     description: "Bulk barium powder for hospital compounding and high-volume GI imaging departments.",
     category: "Barium & GI Contrast",
-    image: "/images/radiology/rad-26-imaging-supplies.png",
+    image: "/images/products/20250913_131936.jpg.jpeg",
   },
   {
     id: "injector-syringe",
@@ -63,30 +63,30 @@ export const otherProducts: OtherProduct[] = [
   {
     id: "olympus-normal-roll",
     name: "Normal Thermal Roll",
-    description: "Standard-grade thermal paper roll for endoscopy and ultrasound report printing.",
+    description: "Standard-grade thermal paper roll for endoscopy and ultrasound image printing.",
     category: "Endoscopy Media",
-    image: "/images/radiology/rad-04-print-films.png",
+    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM-1.jpeg",
   },
   {
     id: "olympus-glossy-roll",
     name: "High Glossy Thermal Roll",
     description: "Premium glossy thermal roll for high-definition endoscopic image documentation.",
     category: "Endoscopy Media",
-    image: "/images/radiology/rad-10-blue-medical-film.png",
+    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM.jpeg",
   },
   {
     id: "standard-thermal-roll",
     name: "Standard Thermal Roll",
     description: "Standard thermal paper for compatible medical printers in ultrasound and endoscopy workflows.",
     category: "Endoscopy Media",
-    image: "/images/radiology/rad-04-print-films.png",
+    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM-1.jpeg",
   },
   {
     id: "high-gloss-thermal-roll",
     name: "High Glossy Thermal Roll",
     description: "High-gloss thermal media for premium image presentation on compatible medical printers.",
     category: "Endoscopy Media",
-    image: "/images/radiology/rad-10-blue-medical-film.png",
+    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM.jpeg",
   },
   {
     id: "ultrasound-jelly",
@@ -128,14 +128,14 @@ export const otherProducts: OtherProduct[] = [
     name: "Arihant Developer",
     description: "X-ray film developer solution for manual processing darkroom workflows.",
     category: "Radiology Accessories",
-    image: "/images/radiology/rad-02-xray-lightbox.png",
+    image: "/images/products/WhatsApp-Image-2026-06-02-at-10.04.29-PM.jpeg",
   },
   {
     id: "arihant-fixer",
     name: "Arihant Fixer",
     description: "Film fixer for manual X-ray processing — rapid fixing with long bath life.",
     category: "Radiology Accessories",
-    image: "/images/radiology/fresh-08-skull-profile.jpeg",
+    image: "/images/products/PHOTO-2026-01-07-18-16-20.jpg.jpeg",
   },
   {
     id: "kiran-apron",
@@ -145,3 +145,5 @@ export const otherProducts: OtherProduct[] = [
     image: "/images/products/PHOTO-2026-01-07-18-14-53.jpg.jpeg",
   },
 ];
+
+

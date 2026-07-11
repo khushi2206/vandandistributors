@@ -14,9 +14,9 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { StaggerGrid, StaggerItem } from "@/components/FadeIn";
 
 const highlights = [
-  { value: "2015", label: "Serving Gujarat since" },
+  { value: "2007", label: "Operating Since" },
   { value: "5+", label: "Imager categories" },
-  { value: "Pan-state", label: "Clinic & hospital supply" },
+  { value: "Pan India", label: "Clinic and hospital supply" },
 ];
 
 const features: {
@@ -36,7 +36,7 @@ const features: {
     icon: Truck,
     label: "Fast Delivery",
     description:
-      "Responsive dispatch across Gujarat so radiology teams receive film stock before imaging schedules slip.",
+      "Responsive Pan India dispatch so radiology teams receive film stock before imaging schedules slip.",
     tag: "Quick turnaround",
   },
   {
@@ -64,7 +64,7 @@ const features: {
     icon: Building2,
     label: "Trusted by Clinics",
     description:
-      "Trusted by hospitals, standalone diagnostic labs, and radiology departments across the region.",
+      "Trusted by hospitals, standalone diagnostic labs, and radiology departments across India.",
     tag: "Proven partner",
   },
 ];
@@ -121,3 +121,4 @@ export function WhyUsSection() {
     </section>
   );
 }
+

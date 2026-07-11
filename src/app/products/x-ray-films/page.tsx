@@ -28,7 +28,7 @@ export default function XRayFilmsPage() {
       <section className="medical-section">
         <SectionHeading
           title="Dry Imaging Films"
-          description="Diagnostic-grade films in all standard sizes - available for immediate supply across Gujarat and pan-India."
+          description="Diagnostic-grade films in all standard sizes - available for immediate Pan India supply."
         />
         <div className="product-grid">
           {dryFilmProducts.map((film) => (
@@ -106,3 +106,4 @@ export default function XRayFilmsPage() {
     </PageShell>
   );
 }
+

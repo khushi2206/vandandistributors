@@ -9,7 +9,7 @@ export type PrintingSolution = {
 };
 
 export const mipsOverview = {
-  title: "Medical Imaging Print Solutions (MIPS)",
+  title: "Medical Imaging Solutions (MIPS)",
   subtitle: "Versatile DICOM printing on conventional films, white medical-grade films, and paper.",
   description:
     "Vandan Distributors MIPS is an end-to-end solution with zero capital expense. We provide the printer, DICOM software, ink, media, maintenance, and service — you pay only per print.",
@@ -27,7 +27,7 @@ export const printingSolutions: PrintingSolution[] = [
   {
     id: "mri-printing",
     modality: "MRI",
-    title: "MRI Report Printing",
+    title: "MRI Solution",
     description:
       "High-resolution DICOM print output for brain, spine, and body MRI studies. Crisp grayscale reproduction on diagnostic film or paper for referring physicians and patient records.",
     features: [
@@ -37,12 +37,12 @@ export const printingSolutions: PrintingSolution[] = [
       "Per-print billing with no capex",
     ],
     outputFormats: ['10" × 12"', '14" × 17"', "A4 Paper", "A3 Paper"],
-    image: "/images/radiology/fresh-02-brain-mri-grid.jpeg",
+    image: "/images/products/20250913_131833.jpg.jpeg",
   },
   {
     id: "ct-printing",
     modality: "CT",
-    title: "CT Scan Report Printing",
+    title: "CT Scan Solution",
     description:
       "Reliable CT image printing for high-volume diagnostic centres. Consistent window/level rendering and multi-slice layouts for thoracic, abdominal, and angiographic studies.",
     features: [
@@ -52,14 +52,14 @@ export const printingSolutions: PrintingSolution[] = [
       "Included maintenance and ink supply",
     ],
     outputFormats: ['8" × 10"', '10" × 12"', '14" × 17"', "A3 Paper", "A3 PVC"],
-    image: "/images/radiology/fresh-01-xray-panel.jpeg",
+    image: "/images/products/WhatsApp-Image-2026-06-02-at-10.04.30-PM.jpeg",
   },
   {
     id: "ultrasound-printing",
     modality: "Ultrasound",
-    title: "Ultrasound Report Printing",
+    title: "Ultrasound Solution",
     description:
-      "Excellent image quality for obstetric, abdominal, and vascular ultrasound reports. Trusted by centres for sonography print output on film and paper.",
+      "Excellent image quality for obstetric, abdominal, and vascular ultrasound outputs. Trusted by centres for sonography print output on film and paper.",
     features: [
       "Colour and grayscale ultrasound support",
       "Multi-image grid layouts",
@@ -72,9 +72,9 @@ export const printingSolutions: PrintingSolution[] = [
   {
     id: "xray-printing",
     modality: "X-Ray",
-    title: "X-Ray Report Printing",
+    title: "X-Ray Solution",
     description:
-      "DICOM print solution for CR/DR X-ray systems. High-contrast bone and chest film output with flexible sizing for radiology departments and teleradiology centres.",
+      "DICOM solution for CR/DR X-ray systems. High-contrast bone and chest film output with flexible sizing for radiology departments and teleradiology centres.",
     features: [
       "DICOM print from CR/DR modalities",
       "Blue-base and white film output",
@@ -82,12 +82,12 @@ export const printingSolutions: PrintingSolution[] = [
       "Zero capital expense model",
     ],
     outputFormats: ['8" × 10"', '10" × 12"', '13" × 17"', "A4", "A3 Paper", "A3 PVC"],
-    image: "/images/radiology/fresh-04-shoulder-xray.jpeg",
+    image: "/images/products/WhatsApp-Image-2026-06-02-at-10.04.30-PM-1.jpeg",
   },
   {
     id: "pet-ct-printing",
     modality: "PET-CT",
-    title: "PET-CT Report Printing",
+    title: "PET-CT Solution",
     description:
       "Fusion image and multi-planar reconstruction printing for nuclear medicine and oncology centres requiring combined functional and anatomical documentation.",
     features: [
@@ -97,12 +97,12 @@ export const printingSolutions: PrintingSolution[] = [
       "End-to-end service and maintenance",
     ],
     outputFormats: ['10" × 12"', '14" × 17"', "A3 Paper"],
-    image: "/images/radiology/fresh-03-diagnostic-archive.jpeg",
+    image: "/images/products/20250913_130304.jpg.jpeg",
   },
   {
     id: "opg-printing",
     modality: "OPG",
-    title: "OPG & Dental Imaging Printing",
+    title: "OPG & Dental Imaging Solution",
     description:
       "Panoramic and cephalometric image printing for dental imaging centres and maxillofacial radiology practices.",
     features: [
@@ -112,7 +112,7 @@ export const printingSolutions: PrintingSolution[] = [
       "Per-print cost model",
     ],
     outputFormats: ['8" × 10"', '10" × 12"', "A4 Paper"],
-    image: "/images/radiology/fresh-05-foot-xray.jpeg",
+    image: "/images/products/WhatsApp-Image-2026-06-02-at-10.04.30-PM-2.jpeg",
   },
 ];
 
@@ -132,3 +132,6 @@ export const coverageStates = [
 ];
 
 export const officeLocations = ["Ahmedabad", "Mumbai", "Delhi", "Bengaluru", "Kolkata", "Nagpur", "Pune", "Bhopal"];
+
+
+

@@ -5,18 +5,21 @@ export const site = {
     tagline: "Radiology & Imaging Solutions",
     title: "Vandan Distributors | Radiology & Diagnostic Supplies",
     description:
-      "Vandan Distributors provides contrast media, X-ray films, medical imaging print solutions (MIPS), and diagnostic consumables for hospitals and diagnostic centres across India.",
+      "Vandan Distributors provides contrast media, X-ray films, medical imaging solutions (MIPS), and diagnostic consumables for hospitals and diagnostic centres across India.",
     logo: "/images/brand/logo.png",
     ogImage: "/images/brand/logo.png",
-    phone: "+91 810 810 0404",
-    phoneAlt: "+91 91579 76333",
-    phoneHref: "tel:+918108100404",
-    email: "info@accuratemedical.in",
-    emailHref: "mailto:info@accuratemedical.in",
-    whatsappLink: "https://wa.me/918108100404",
-    whatsappNumber: "918108100404",
-    mapsLink: "https://www.google.com/maps/search/?api=1&query=14%20First%20Floor%2C%20Municipal%20Market%2C%20G.D%20Road%2C%20Opp.%20Maruti%20Nandan%20Complex%2C%20Vijay%20Para%2C%20Visnagar%2C%20Gujarat%20384315%2C%20India",
-    location: "14 First Floor, Municipal Market, G.D Road, Opp. Maruti Nandan Complex, Vijay Para, Visnagar, Gujarat 384315, India",
+    phone: "+91 94284 60003",
+    phoneAlt: "",
+    phoneHref: "tel:+919428460003",
+    email: "vandan1011@yahoo.in",
+    emailHref: "mailto:vandan1011@yahoo.in",
+    whatsappLink: "https://wa.me/919428460003",
+    whatsappNumber: "919428460003",
+    mapsLink: "https://share.google/87yx4He6CD0HynrRd",
+    mapsEmbedUrl:
+      "https://maps.google.com/maps?q=Second%20Floor%20Shop%20No.%20218-221%2C%20Heritage%20Trade%20Center%2C%20Kada%20Road%2C%20Opp.%20Navi%20Kanya%20Vidhalay%2C%20Vijay%20Para%2C%20Visnagar%2C%20Gujarat%20384315%2C%20India&output=embed",
+    location:
+      "Second Floor Shop No. 218-221, Heritage Trade Center, Kada Road, Opp. Navi Kanya Vidhalay, Vijay Para, Visnagar, Gujarat 384315.",
     themeColor: "#7a6a43",
     accentColor: "#b89552",
   },
@@ -34,14 +37,14 @@ export const site = {
     { label: "Contrast Media", href: "/products/contrast-media" },
     { label: "X-Ray Films", href: "/products/x-ray-films" },
     { label: "Other Products", href: "/products/other-products" },
-    { label: "Printing Solutions", href: "/products/printing-solutions" },
+    { label: "Solutions", href: "/products/printing-solutions" },
   ] as const,
 
   hero: {
-    eyebrow: "Medical Imaging Print Solutions (MIPS)",
+    eyebrow: "Medical Imaging Solutions (MIPS)",
     headline: "Precision radiology supplies for accurate diagnostics.",
     lede:
-      "Contrast media, diagnostic films, and end-to-end medical imaging print solutions - trusted by hospitals, diagnostic centres, and radiology teams since 2015.",
+      "Contrast media, diagnostic films, and end-to-end medical imaging solutions - trusted by hospitals, diagnostic centres, and radiology teams across India. Operating Since 2007.",
     ctaPrimary: "Request a Quote",
     ctaSecondary: "Explore Products",
   },
@@ -49,7 +52,7 @@ export const site = {
   intro: {
     title: "Vandan Distributors",
     body:
-      "Started operations in June 2015, Vandan Distributors is promoted by professionals with vast experience in printing, medical imaging, and IT. We deliver high-quality, cost-effective MIPS to hospitals, diagnostic centres, radiologists, sonologists, nuclear medicine centres, and mobile healthcare units.",
+      "Operating Since 2007, Vandan Distributors is promoted by professionals with vast experience in printing, medical imaging, and IT. We deliver high-quality, cost-effective MIPS to hospitals, diagnostic centres, radiologists, sonologists, nuclear medicine centres, and mobile healthcare units.",
     highlight:
       "Our MIPS model is an end-to-end solution with no capital expense - printer, software, ink, media, maintenance, and services included. You pay only per print.",
   },
@@ -68,20 +71,20 @@ export const site = {
       body: "Contrast media, diagnostic films, manual X-ray films, and a complete catalogue of radiology consumables under Vandan Distributors guidance.",
     },
     {
-      title: "Pan-India Reach",
-      body: "Strong distribution across Gujarat and major states with responsive technical and commercial support.",
+      title: "Pan India Reach",
+      body: "Pan India distribution with responsive technical and commercial support.",
     },
   ],
 
   metrics: [
-    { value: "2015", label: "Operating since" },
+    { value: "2007", label: "Operating Since" },
     { value: "Per print", label: "Billing model" },
     { value: "30+", label: "States served" },
   ],
 
   about: {
     overview:
-      "Vandan Distributors is a specialist radiology and diagnostic supplies company focused on contrast media, X-ray films, medical imaging print solutions, and hospital consumables. Since June 2015, we have partnered with healthcare facilities to reduce printing costs while improving output quality.",
+      "Vandan Distributors is a specialist radiology and diagnostic supplies company focused on contrast media, X-ray films, medical imaging solutions, and hospital consumables. Operating Since 2007, we have partnered with healthcare facilities across India to reduce imaging costs while improving output quality.",
     mission:
       "To deliver reliable, cost-effective medical imaging solutions that help clinicians make accurate diagnoses without capital burden on healthcare providers.",
     vision:
@@ -111,7 +114,7 @@ export const site = {
   },
 
   footer:
-    "(c) 2026 Vandan Distributors. Contrast media, diagnostic films & medical imaging print solutions.",
+    "(c) 2026 Vandan Distributors. Contrast media, diagnostic films & medical imaging solutions.",
 
   textReplacements: {} as Record<string, string>,
 
@@ -179,3 +182,5 @@ export const site = {
 
 export type SiteContent = typeof site;
 export type BrandName = keyof typeof site.compatibilityData;
+
+
