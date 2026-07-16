@@ -11,6 +11,66 @@ export type ContrastProduct = {
   brochure?: string;
 };
 
+const contrastMediaImages = [
+  "/images/contrast-media/cardiolek-320-mg-100-ml.jpg",
+  "/images/contrast-media/cardiolek-320-mg-50-ml.jpg",
+  "/images/contrast-media/contrapaque-300-mg-100-ml.jpg",
+  "/images/contrast-media/contrapaque-300mg-50ml.jpg",
+  "/images/contrast-media/contrapaque-350-mg-100ml.jpg",
+  "/images/contrast-media/contrapaque-350-mg-200ml.jpg",
+  "/images/contrast-media/contrapaque-350-mg-50ml.jpg",
+  "/images/contrast-media/gestrolek-100-ml.jpg",
+  "/images/contrast-media/gestrolek-30-ml.jpg",
+  "/images/contrast-media/lek-pamidol-370-mg-100-ml.jpg",
+  "/images/contrast-media/lek-pamidol-370-mg-50-ml.jpg",
+  "/images/contrast-media/magnalik-10-ml.jpg",
+  "/images/contrast-media/magnalim-20-ml.jpg",
+  "/images/contrast-media/trazogestro-100-ml.jpg",
+  "/images/contrast-media/trazogestro-30-ml.jpg",
+  "/images/contrast-media/trazograf-60-percent-20-ml.jpg",
+  "/images/contrast-media/trazograf-76-percent-100-ml.jpg",
+  "/images/contrast-media/trazograf-76-percent-20-ml.jpg",
+] as const;
+
+export const defaultContrastMediaImage = "/images/products/image.png";
+
+const contrastImageAliases: Record<string, string[]> = {
+  "lek-pamidol": ["lek-pamidol"],
+  contrapaque: ["contrapaque"],
+  "trazograf-76": ["trazograf-76"],
+  "trazograf-60": ["trazograf-60"],
+  cardiolek: ["cardiolek"],
+  gastrolek: ["gastrolek", "gestrolek"],
+  trazogastro: ["trazogastro", "trazogestro"],
+  magnilek: ["magnilek", "magnalik", "magnalim"],
+  gadotrast: ["gadotrast"],
+};
+
+const normalizeImageKey = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/%/g, " percent ")
+    .replace(/\.[a-z0-9]+$/i, "")
+    .replace(/injection|oral|contrast|media/g, " ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+const getContrastMediaImage = (productId: string, productName: string, activeIngredient: string) => {
+  const candidates = [
+    ...(contrastImageAliases[productId] ?? []),
+    productId,
+    productName,
+    activeIngredient,
+  ].map(normalizeImageKey);
+
+  return (
+    contrastMediaImages.find((image) => {
+      const imageKey = normalizeImageKey(image.split("/").pop() ?? image);
+      return candidates.some((candidate) => candidate && imageKey.includes(candidate));
+    }) ?? defaultContrastMediaImage
+  );
+};
+
 export const contrastCategories = [
   {
     id: "x-ray",
@@ -44,7 +104,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Non-ionic iodinated contrast medium for intravenous use in CT, angiography, and urography. Low osmolality profile for improved patient tolerance.",
     iodineConc: "300 / 340 / 370 mg/mL",
     packs: ["20 mL amp", "50 mL vial", "100 mL vial"],
-    image: "/images/products/20250913_131936.jpg.jpeg",
+    image: getContrastMediaImage("lek-pamidol", "Lek-Pamidol Injection", "Iopamidol"),
     brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
   },
   {
@@ -57,7 +117,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Widely used non-ionic contrast agent for CT, IV urography, angiocardiography, and peripheral angiography with excellent safety profile.",
     iodineConc: "300 / 350 mg/mL",
     packs: ["20 mL amp", "50 mL vial", "100 mL vial", "200 mL vial"],
-    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM.jpeg",
+    image: getContrastMediaImage("contrapaque", "Contrapaque Injection", "Iohexol"),
     brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
   },
   {
@@ -70,7 +130,7 @@ export const contrastProducts: ContrastProduct[] = [
       "High-concentration ionic contrast medium for angiography, IV urography, and CT applications requiring 370 mg/mL iodine.",
     iodineConc: "370 mg/mL",
     packs: ["20 mL amp", "50 mL vial", "100 mL vial"],
-    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM-1.jpeg",
+    image: getContrastMediaImage("trazograf-76", "Trazograf 76% Injection", "Meglumine & Sodium Diatrizoate"),
   },
   {
     id: "trazograf-60",
@@ -82,7 +142,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Ionic contrast agent at 282 mg/mL iodine concentration for general radiographic and urographic procedures.",
     iodineConc: "282 mg/mL",
     packs: ["20 mL amp", "50 mL vial", "100 mL vial"],
-    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM-1.jpeg",
+    image: getContrastMediaImage("trazograf-60", "Trazograf 60% Injection", "Meglumine Diatrizoate"),
   },
   {
     id: "cardiolek",
@@ -94,7 +154,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Iso-osmolar contrast medium ideal for cardiac angiography, coronary interventions, and high-risk patients requiring optimal tolerability.",
     iodineConc: "320 mg/mL",
     packs: ["50 mL vial", "100 mL vial"],
-    image: "/images/products/20250913_131833.jpg.jpeg",
+    image: getContrastMediaImage("cardiolek", "Cardiolek Injection", "Iodixanol"),
   },
   {
     id: "gastrolek",
@@ -106,7 +166,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Oral contrast preparation for upper GI and abdominal CT studies requiring bowel opacification.",
     iodineConc: "249.64 mg/mL",
     packs: ["30 mL bottle", "100 mL bottle"],
-    image: "/images/products/20250913_130304.jpg.jpeg",
+    image: getContrastMediaImage("gastrolek", "Gastrolek Oral Contrast", "Sodium Diatrizoate"),
   },
   {
     id: "trazogastro",
@@ -118,7 +178,7 @@ export const contrastProducts: ContrastProduct[] = [
       "High-density oral contrast medium for gastrointestinal radiography and CT enterography protocols.",
     iodineConc: "370 mg/mL",
     packs: ["30 mL bottle", "100 mL bottle"],
-    image: "/images/products/20250913_131833.jpg.jpeg",
+    image: getContrastMediaImage("trazogastro", "Trazogastro Oral Contrast", "Meglumine & Sodium Diatrizoate"),
   },
   {
     id: "magnilek",
@@ -130,7 +190,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Gadolinium-based MRI contrast agent for enhancement of lesions, vascular structures, and inflammatory tissue in brain and body MRI.",
     iodineConc: "0.5 mmol/mL",
     packs: ["10 mL vial", "20 mL vial"],
-    image: "/images/products/20250913_131833.jpg.jpeg",
+    image: getContrastMediaImage("magnilek", "Magnilek Injection", "Gadopentetate Dimeglumine"),
   },
   {
     id: "gadotrast",
@@ -142,7 +202,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Macrocyclic gadolinium chelate offering high stability and excellent contrast enhancement for MRI across body regions.",
     iodineConc: "0.5 mmol/mL",
     packs: ["10 mL vial", "20 mL vial"],
-    image: "/images/products/20250913_130304.jpg.jpeg",
+    image: getContrastMediaImage("gadotrast", "Gadotrast Injection", "Gadoteric Acid"),
   },
 ];
 

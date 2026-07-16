@@ -831,6 +831,7 @@
   display: block;
   font-size: 0.9rem;
   color: var(--text-secondary);
+  overflow-wrap: anywhere;
 }
 
 .contact-info-item a:hover {
@@ -1060,6 +1061,7 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
+  min-width: 0;
 }
 
 .site-footer {
@@ -1161,6 +1163,15 @@
   .medical-cta-actions > *,
   .product-card [data-slot="card-footer"] > * {
     flex: 1 1 100%;
+  }
+
+  .medical-cta-actions a,
+  .contact-info-item a[href^="tel:"],
+  .site-footer__contact a[href^="tel:"] {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.25;
+    text-align: center;
   }
 }
 
@@ -1274,5 +1285,208 @@
 
   .spec-card__meta strong {
     grid-column: 2;
+  }
+}
+
+/* Production responsive hardening */
+@media (max-width: 1023px) {
+  .site-nav {
+    display: none !important;
+  }
+
+  .site-header__menu-btn {
+    display: flex !important;
+    flex: 0 0 auto;
+  }
+
+  .site-header__actions {
+    flex: 0 0 auto;
+  }
+
+  .site-mobile-nav {
+    max-height: calc(100dvh - 4.5rem);
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header__menu-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 899px) {
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form label,
+  .contact-form__full,
+  .contact-form__submit {
+    grid-column: 1 / -1;
+  }
+
+  .about-cta-row {
+    align-items: stretch;
+  }
+
+  .about-cta-row > *,
+  .about-cta-row a,
+  .about-cta-row button {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .medical-cta-banner {
+    grid-template-columns: 1fr !important;
+  }
+
+  .medical-cta-actions {
+    justify-content: flex-start !important;
+    width: 100%;
+  }
+
+  .medical-cta-actions > * {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    gap: 0.75rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+
+  .site-brand {
+    flex: 1 1 auto;
+  }
+
+  .site-brand__text strong {
+    font-size: clamp(0.92rem, 4vw, 1.05rem);
+    overflow-wrap: anywhere;
+  }
+
+  .site-brand__text small {
+    max-width: 58vw;
+  }
+
+  .site-header__cta {
+    display: none !important;
+  }
+
+  .page-hero {
+    padding-top: clamp(2.75rem, 12vw, 4rem);
+  }
+
+  .page-hero__title,
+  .section-heading__title,
+  .medical-section__heading h2 {
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  .contact-map-placeholder {
+    min-height: clamp(18rem, 72vw, 24rem);
+  }
+
+  .contact-map-placeholder iframe {
+    height: clamp(18rem, 72vw, 24rem) !important;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .product-card [data-slot="card-footer"],
+  .category-card [data-slot="card-footer"],
+  .film-product-card [data-slot="card-footer"],
+  .printing-solution-card [data-slot="card-footer"] {
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+  }
+
+  .product-card [data-slot="card-footer"] a,
+  .product-card [data-slot="card-footer"] button,
+  .category-card [data-slot="card-footer"] a,
+  .category-card [data-slot="card-footer"] button {
+    width: 100%;
+    min-width: 0;
+    white-space: normal;
+  }
+
+  .product-card [data-slot="card-footer"] > *,
+  .product-card [data-slot="card-footer"] a,
+  .product-card [data-slot="card-footer"] button {
+    flex: 1 1 auto !important;
+    max-width: 100% !important;
+  }
+
+  [data-slot="badge"] {
+    max-width: 100%;
+    height: auto;
+    min-height: 1.25rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.25;
+    text-align: left;
+  }
+
+  .download-filters {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .download-filter-btn {
+    width: 100%;
+    min-height: 2.75rem;
+  }
+}
+
+@media (max-width: 390px) {
+  :root {
+    --site-gutter: 0.85rem;
+    --card-pad: 1rem;
+  }
+
+  .medical-hero,
+  .page-hero,
+  .section-heading,
+  .medical-section__heading,
+  .intro-grid,
+  .category-grid,
+  .product-grid,
+  .testimonials-grid,
+  .downloads-grid,
+  .printing-solutions-grid,
+  .why-choose-grid,
+  .about-grid,
+  .values-grid,
+  .contact-grid,
+  .mips-overview,
+  .coverage-grid,
+  .office-locations,
+  .spec-table,
+  .spec-card-grid,
+  .medical-cta-banner,
+  .about-cta-row,
+  .trust-list,
+  .download-filters,
+  .site-footer__grid,
+  .site-footer__bottom {
+    width: min(100% - 1.5rem, var(--site-container));
+  }
+
+  .contact-info-item {
+    gap: 0.55rem;
+  }
+
+  .contact-brand-lockup {
+    align-items: flex-start;
   }
 }

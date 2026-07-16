@@ -24,7 +24,7 @@ export default function DownloadsClient() {
       <PageHero
         eyebrow="Resources"
         title="Downloads & Brochures"
-        description="Product catalogues, brochures, and technical datasheets — including CT, MRI, and colour print samples."
+        description="Product catalogues and brochures for radiology procurement teams."
       />
 
       <section className="medical-section">
@@ -72,7 +72,7 @@ export default function DownloadsClient() {
         </div>
       </section>
 
-      <CTASection title="Need a custom product catalogue?" description={`Contact ${site.brand.name} for tailored brochures and technical documentation.`} />
+      <CTASection title="Need a custom product catalogue?" description={`Contact ${site.brand.name} for tailored brochures and product documentation.`} />
     </PageShell>
   );
 }

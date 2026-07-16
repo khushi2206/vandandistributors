@@ -24,7 +24,7 @@ import { testimonials } from "@/content/testimonials";
 const printImages = {
   heroPrimary: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM.jpeg",
   printMedia: "/images/products/20250913_131833.jpg.jpeg",
-  contrastPrint: "/images/products/20250913_131936.jpg.jpeg",
+  contrastPrint: "/images/contrast-media/contrapaque-350-mg-200ml.jpg",
   filmPack: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM.jpeg",
   xrayPrint: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM-1.jpeg",
   filmOutput: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM-2.jpeg",
@@ -82,7 +82,7 @@ const reasons = [
   {
     icon: ScanLine,
     title: "Modality-aware guidance",
-    copy: "Support across MRI, CT, X-ray, ultrasound, PET-CT, OPG, contrast media, films, and printing workflows.",
+    copy: "Support across MRI, CT, X-ray, ultrasound, PET-CT, contrast media, films, and printing workflows.",
   },
   {
     icon: Printer,
@@ -131,7 +131,7 @@ const printingHighlights = [
   "No capital expense",
   "Per-print billing",
   "Software, ink, media, and service included",
-  "MRI, CT, ultrasound, X-ray, PET-CT, and OPG workflows",
+  "MRI, CT, ultrasound, X-ray, and PET-CT workflows",
 ];
 
 export function HomePage() {
@@ -322,7 +322,7 @@ export function HomePage() {
           <h2>Professional medical solutions without the capital burden.</h2>
           <p>
             Vandan Distributors MIPS brings printer, software, ink, media, maintenance, and service
-            into one dependable workflow for MRI, CT, ultrasound, X-ray, PET-CT, and OPG output.
+            into one dependable workflow for MRI, CT, ultrasound, X-ray, and PET-CT output.
           </p>
           <div className="vandan-printing__list">
             {printingHighlights.map((item) => (
@@ -386,5 +386,3 @@ export function HomePage() {
     </div>
   );
 }
-
-

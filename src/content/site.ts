@@ -15,7 +15,8 @@ export const site = {
     emailHref: "mailto:vandan1011@yahoo.in",
     whatsappLink: "https://wa.me/919428460003",
     whatsappNumber: "919428460003",
-    mapsLink: "https://share.google/87yx4He6CD0HynrRd",
+    mapsLink:
+      "https://www.google.com/maps/search/?api=1&query=VANDAN%20DISTRIBUTORS%2C%20Second%20Floor%20Shop%20No.%20218-221%2C%20Heritage%20Trade%20Center%2C%20Kada%20Road%2C%20Opp.%20Navi%20Kanya%20Vidhalay%2C%20Vijay%20Para%2C%20Visnagar%2C%20Gujarat%20384315",
     mapsEmbedUrl:
       "https://maps.google.com/maps?q=Second%20Floor%20Shop%20No.%20218-221%2C%20Heritage%20Trade%20Center%2C%20Kada%20Road%2C%20Opp.%20Navi%20Kanya%20Vidhalay%2C%20Vijay%20Para%2C%20Visnagar%2C%20Gujarat%20384315%2C%20India&output=embed",
     location:
@@ -64,7 +65,7 @@ export const site = {
     },
     {
       title: "Multi-Modality Coverage",
-      body: "MRI, CT, PET-CT, Ultrasound, X-Ray, and OPG workflows supported from a single platform.",
+      body: "MRI, CT, PET-CT, Ultrasound, and X-Ray workflows supported from a single platform.",
     },
     {
       title: "Trusted Product Range",
@@ -79,7 +80,7 @@ export const site = {
   metrics: [
     { value: "2007", label: "Operating Since" },
     { value: "Per print", label: "Billing model" },
-    { value: "30+", label: "States served" },
+    { value: "Gujarat", label: "Gujarat served" },
   ],
 
   about: {
@@ -182,5 +183,4 @@ export const site = {
 
 export type SiteContent = typeof site;
 export type BrandName = keyof typeof site.compatibilityData;
-
 

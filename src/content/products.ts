@@ -5,7 +5,7 @@ export const productCategories = [
     title: "Contrast Media",
     description:
       "Complete Vandan Distributors range - non-ionic, ionic, iso-osmolar, and MRI contrast agents for CT, angiography, and MR imaging.",
-    image: "/images/products/20250913_131936.jpg.jpeg",
+    image: "/images/contrast-media/contrapaque-350-mg-200ml.jpg",
     tag: "Contrast Media",
   },
   {
@@ -31,7 +31,7 @@ export const productCategories = [
     href: "/products/printing-solutions",
     title: "Solutions",
     description:
-      "End-to-end MIPS for MRI, CT, Ultrasound, X-Ray, PET-CT, and OPG - printer, software, ink, media, and service on per-print billing.",
+      "End-to-end MIPS for MRI, CT, Ultrasound, X-Ray, and PET-CT - printer, software, ink, media, and service on per-print billing.",
     image: "/images/products/20250913_130304.jpg.jpeg",
     tag: "MIPS",
   },

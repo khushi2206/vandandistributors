@@ -6,7 +6,7 @@ import {
   mipsOverview,
   printingSolutions,
   mipsIncludes,
-  coverageStates,
+  coverageRegions,
   officeLocations,
 } from "@/content/printing-solutions";
 import { PageShell } from "@/components/PageShell";
@@ -19,7 +19,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export const metadata: Metadata = {
   title: `Solutions | ${site.brand.name}`,
-  description: "Medical Imaging Print Solutions (MIPS) — MRI, CT, Ultrasound, X-Ray, PET-CT, and OPG printing with per-print billing and zero capex.",
+  description: "Medical Imaging Print Solutions (MIPS) - MRI, CT, Ultrasound, X-Ray, and PET-CT printing with per-print billing and zero capex.",
 };
 
 export default function PrintingSolutionsPage() {
@@ -100,6 +100,21 @@ export default function PrintingSolutionsPage() {
                       ))}
                     </div>
                   </div>
+                  {solution.rollTypes ? (
+                    <div>
+                      <strong className="mb-2 block text-xs font-bold uppercase tracking-wide text-muted-foreground">
+                        Roll Types
+                      </strong>
+                      <div className="space-y-2 text-sm leading-relaxed text-muted-foreground">
+                        {solution.rollTypes.map((roll) => (
+                          <p key={roll.label}>
+                            <span className="font-semibold text-foreground">{roll.label}:</span>{" "}
+                            {roll.options.join(", ")}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
                 </CardContent>
               </Card>
             </FadeIn>
@@ -111,12 +126,12 @@ export default function PrintingSolutionsPage() {
       <section className="medical-section">
         <SectionHeading
           title="Pan India customer base"
-          description="Serving healthcare facilities across major states with offices in key cities."
+          description="Serving healthcare facilities across Gujarat with our office in Visnagar."
         />
         <StaggerGrid className="coverage-grid">
-          {coverageStates.map((state) => (
-            <StaggerItem key={state}>
-              <span className="coverage-chip">{state}</span>
+          {coverageRegions.map((region) => (
+            <StaggerItem key={region}>
+              <span className="coverage-chip">{region}</span>
             </StaggerItem>
           ))}
         </StaggerGrid>
@@ -134,7 +149,7 @@ export default function PrintingSolutionsPage() {
 
       <CTASection
         title="Ready to save up to 50% on printing costs?"
-        description="Book a MIPS demo — zero capital expense, per-print billing, and full maintenance included."
+        description="Book a MIPS demo - zero capital expense, per-print billing, and full maintenance included."
       />
     </PageShell>
   );

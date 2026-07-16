@@ -6849,3 +6849,220 @@ p {
     flex-direction: column;
   }
 }
+
+/* Responsive production pass */
+.medical-site,
+.site-main,
+.vandan-home {
+  max-width: 100%;
+}
+
+.vandan-home img,
+.medical-site img {
+  max-width: 100%;
+}
+
+.vandan-home a,
+.vandan-home button,
+.medical-site a,
+.medical-site button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.vandan-category-card,
+.vandan-featured-card,
+.vandan-reason-card,
+.vandan-testimonial-card,
+.vandan-stat-card,
+.vandan-cta__panel,
+.home-product-card,
+.home-workflow-card {
+  min-width: 0;
+}
+
+.vandan-category-card h3,
+.vandan-featured-card h3,
+.vandan-reason-card h3,
+.vandan-testimonial-card p,
+.vandan-printing h2,
+.vandan-cta h2,
+.home-product-card h3,
+.home-workflow-card h3 {
+  overflow-wrap: anywhere;
+}
+
+.vandan-btn,
+.home-button,
+.home-cta__actions a {
+  min-width: 0;
+  text-align: center;
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --site-container: 1320px;
+  }
+
+  .vandan-partner,
+  .vandan-section,
+  .vandan-printing,
+  .vandan-cta {
+    padding-left: clamp(2.5rem, 6vw, 5rem);
+    padding-right: clamp(2.5rem, 6vw, 5rem);
+  }
+}
+
+@media (max-width: 1280px) {
+  .vandan-hero__content {
+    max-width: 46rem;
+  }
+
+  .vandan-category-grid,
+  .vandan-reason-grid,
+  .vandan-featured-grid,
+  .vandan-testimonial-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .vandan-hero {
+    min-height: auto;
+  }
+
+  .vandan-hero__carousel {
+    min-height: clamp(34rem, 78vw, 42rem);
+  }
+
+  .vandan-hero__content {
+    left: clamp(1rem, 5vw, 2rem);
+    right: clamp(1rem, 5vw, 2rem);
+    bottom: clamp(5.5rem, 12vw, 7rem);
+    max-width: min(42rem, calc(100% - 2rem));
+  }
+
+  .vandan-printing {
+    grid-template-columns: 1fr;
+  }
+
+  .vandan-printing__media {
+    min-height: clamp(18rem, 52vw, 30rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .vandan-partner,
+  .vandan-section,
+  .vandan-printing,
+  .vandan-cta {
+    padding-left: var(--site-gutter);
+    padding-right: var(--site-gutter);
+  }
+
+  .vandan-hero__carousel {
+    min-height: clamp(31rem, 120vw, 38rem);
+    border-radius: 0;
+  }
+
+  .vandan-hero h1 {
+    font-size: clamp(2.15rem, 11vw, 3.6rem);
+    line-height: 1.04;
+  }
+
+  .vandan-hero__content p:not(.vandan-eyebrow) {
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .vandan-hero__actions,
+  .vandan-cta__actions {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .vandan-btn {
+    width: 100%;
+    min-height: 3rem;
+    white-space: normal;
+  }
+
+  .vandan-stat-grid,
+  .vandan-category-grid,
+  .vandan-reason-grid,
+  .vandan-featured-grid,
+  .vandan-testimonial-grid,
+  .vandan-printing__list {
+    grid-template-columns: 1fr;
+  }
+
+  .vandan-category-card__image,
+  .vandan-featured-card__image {
+    min-height: 12rem;
+  }
+
+  .vandan-printing__list span {
+    align-items: flex-start;
+    min-width: 0;
+  }
+
+  .vandan-cta__panel {
+    padding: clamp(1.35rem, 6vw, 2rem);
+  }
+
+  .floating-consult {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .floating-consult a {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vandan-hero__content {
+    bottom: 5.2rem;
+  }
+
+  .vandan-eyebrow {
+    font-size: 0.68rem;
+    line-height: 1.35;
+  }
+
+  .vandan-partner h2,
+  .vandan-section h2,
+  .vandan-printing h2,
+  .vandan-cta h2 {
+    font-size: clamp(1.75rem, 9vw, 2.45rem);
+    line-height: 1.08;
+  }
+
+  .vandan-category-card__body,
+  .vandan-featured-card__body {
+    padding: 1rem;
+  }
+
+  .vandan-testimonial-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .vandan-hero__arrow {
+    width: 2.45rem;
+    height: 2.45rem;
+  }
+
+  .vandan-hero__arrow--prev {
+    right: 3.75rem;
+  }
+
+  .vandan-hero__arrow--next {
+    right: 0.9rem;
+  }
+
+  .vandan-hero__dots {
+    left: 0.9rem;
+  }
+}

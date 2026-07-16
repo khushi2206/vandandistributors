@@ -1,6 +1,7 @@
 export type FilmVariant = {
   size: string;
   packSize: string;
+  spec?: string;
 };
 
 export type FilmProduct = {
@@ -68,7 +69,7 @@ export const vmsManualFilms = {
     "Medical X-ray films for manual processing and conventional darkroom workflows. Available in multiple standard sizes for general radiography.",
   variants: [
     { size: '6.5" x 8.5"', packSize: "50 sheets/box" },
-    { size: '8" x 10"', packSize: "50 sheets/box" },
+    { size: '8" x 10"', packSize: "50 sheets/box", spec: "Approx. 2.25 kg per box" },
     { size: '10" x 12"', packSize: "50 sheets/box" },
     { size: '12" x 12"', packSize: "50 sheets/box" },
     { size: '12" x 15"', packSize: "50 sheets/box" },

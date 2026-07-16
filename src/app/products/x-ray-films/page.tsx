@@ -87,6 +87,7 @@ export default function XRayFilmsPage() {
                   {vmsManualFilms.variants.map((v) => (
                     <Badge key={v.size} variant="secondary" className="font-medium">
                       {v.size} - {v.packSize}
+                      {v.spec ? ` - ${v.spec}` : ""}
                     </Badge>
                   ))}
                 </div>

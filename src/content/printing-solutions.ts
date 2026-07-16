@@ -5,6 +5,7 @@ export type PrintingSolution = {
   description: string;
   features: string[];
   outputFormats: string[];
+  rollTypes?: { label: string; options: string[] }[];
   image: string;
 };
 
@@ -12,10 +13,10 @@ export const mipsOverview = {
   title: "Medical Imaging Solutions (MIPS)",
   subtitle: "Versatile DICOM printing on conventional films, white medical-grade films, and paper.",
   description:
-    "Vandan Distributors MIPS is an end-to-end solution with zero capital expense. We provide the printer, DICOM software, ink, media, maintenance, and service — you pay only per print.",
+    "Vandan Distributors MIPS is an end-to-end solution with zero capital expense. We provide the printer, DICOM software, ink, media, maintenance, and service - you pay only per print.",
   benefits: [
     "Save up to 50% on printing costs",
-    "No capital expenditure — all-in-one per-print model",
+    "No capital expenditure - all-in-one per-print model",
     "Maintenance, software updates, and service included",
     "Connect to multiple modalities via DICOM",
     "Print on blue-base film, white medical film, or paper",
@@ -36,7 +37,7 @@ export const printingSolutions: PrintingSolution[] = [
       "Film and paper output options",
       "Per-print billing with no capex",
     ],
-    outputFormats: ['10" × 12"', '14" × 17"', "A4 Paper", "A3 Paper"],
+    outputFormats: ['10" x 12"', '14" x 17"', "A4 PVC", "A4 Paper", "A3 PVC", "A3 Paper", '13" x 17"'],
     image: "/images/products/20250913_131833.jpg.jpeg",
   },
   {
@@ -51,7 +52,7 @@ export const printingSolutions: PrintingSolution[] = [
       "White film and blue-base film support",
       "Included maintenance and ink supply",
     ],
-    outputFormats: ['8" × 10"', '10" × 12"', '14" × 17"', "A3 Paper", "A3 PVC"],
+    outputFormats: ['8" x 10"', '10" x 12"', '14" x 17"', "A4 PVC", "A4 Paper", "A3 Paper", "A3 PVC", '13" x 17"'],
     image: "/images/products/WhatsApp-Image-2026-06-02-at-10.04.30-PM.jpeg",
   },
   {
@@ -66,7 +67,11 @@ export const printingSolutions: PrintingSolution[] = [
       "Paper and glossy roll options",
       "Quick processing for busy OPD workflows",
     ],
-    outputFormats: ["A4 Paper", "A3 Paper", "Glossy Roll", "Standard Roll"],
+    outputFormats: ["A4 PVC", "A4 Paper", "A3 Paper", "Glossy Roll", "Standard Roll"],
+    rollTypes: [
+      { label: "Glossy Roll", options: ["Sony High Glossy Roll", "Olympus High Glossy Roll"] },
+      { label: "Standard Roll", options: ["Sony Normal Roll", "Olympus Normal Roll"] },
+    ],
     image: "/images/products/WhatsApp-Image-2026-06-10-at-11.42.35-PM.jpeg",
   },
   {
@@ -78,10 +83,10 @@ export const printingSolutions: PrintingSolution[] = [
     features: [
       "DICOM print from CR/DR modalities",
       "Blue-base and white film output",
-      "Multiple size formats including 13×17",
+      "Multiple size formats including 13x17",
       "Zero capital expense model",
     ],
-    outputFormats: ['8" × 10"', '10" × 12"', '13" × 17"', "A4", "A3 Paper", "A3 PVC"],
+    outputFormats: ['8" x 10"', '10" x 12"', '13" x 17"', "A4 PVC", "A4 Paper", "A3 Paper", "A3 PVC"],
     image: "/images/products/WhatsApp-Image-2026-06-02-at-10.04.30-PM-1.jpeg",
   },
   {
@@ -96,23 +101,8 @@ export const printingSolutions: PrintingSolution[] = [
       "DICOM storage and SCP integration",
       "End-to-end service and maintenance",
     ],
-    outputFormats: ['10" × 12"', '14" × 17"', "A3 Paper"],
+    outputFormats: ['10" x 12"', '14" x 17"', "A4 PVC", "A4 Paper", "A3 PVC", "A3 Paper"],
     image: "/images/products/20250913_130304.jpg.jpeg",
-  },
-  {
-    id: "opg-printing",
-    modality: "OPG",
-    title: "OPG & Dental Imaging Solution",
-    description:
-      "Panoramic and cephalometric image printing for dental imaging centres and maxillofacial radiology practices.",
-    features: [
-      "Panoramic image scaling and cropping",
-      "Film and paper output",
-      "Quick single-click printing",
-      "Per-print cost model",
-    ],
-    outputFormats: ['8" × 10"', '10" × 12"', "A4 Paper"],
-    image: "/images/products/WhatsApp-Image-2026-06-02-at-10.04.30-PM-2.jpeg",
   },
 ];
 
@@ -124,14 +114,6 @@ export const mipsIncludes = [
   { label: "Per-Print Billing", detail: "No capital expense, pay as you print" },
 ];
 
-export const coverageStates = [
-  "Andhra Pradesh", "Bihar", "Chhattisgarh", "Delhi/NCR", "Goa", "Gujarat",
-  "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh",
-  "Maharashtra", "Odisha", "Punjab", "Rajasthan", "Tamil Nadu", "Telangana",
-  "Uttar Pradesh", "Uttarakhand", "West Bengal",
-];
+export const coverageRegions = ["Gujarat"];
 
-export const officeLocations = ["Ahmedabad", "Mumbai", "Delhi", "Bengaluru", "Kolkata", "Nagpur", "Pune", "Bhopal"];
-
-
-
+export const officeLocations = ["Visnagar"];

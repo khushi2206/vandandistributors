@@ -51,7 +51,7 @@ export const otherProducts: OtherProduct[] = [
     name: "Extension Tube 150 cm",
     description: "High-pressure extension tubing for contrast injection systems in CT and angiography suites.",
     category: "Injector Accessories",
-    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM-1.jpeg",
+    image: "/images/contrast-media/extension-tube-150-cm.jpg",
   },
   {
     id: "extension-tube-200",
