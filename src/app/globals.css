@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./responsive.css";
 @import "shadcn/tailwind.css";
 
 /* Globals & Typography */
@@ -585,7 +586,8 @@ a {
 .medical-product-card__media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 0.75rem;
   transition: transform var(--transition-slow);
 }
 
@@ -3631,12 +3633,14 @@ h1, h2, h3, h4, h5 {
   display: flex;
   align-items: center;
   padding: clamp(1.4rem, 5vw, 5rem);
+  min-width: 0;
 }
 
 .vandan-hero__content > div {
   display: grid;
   gap: 1.1rem;
   width: min(100%, 720px);
+  min-width: 0;
 }
 
 .vandan-eyebrow {
@@ -3656,6 +3660,7 @@ h1, h2, h3, h4, h5 {
   font-weight: 850;
   line-height: 0.98;
   text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .vandan-hero__content p:not(.vandan-eyebrow) {
@@ -3663,6 +3668,7 @@ h1, h2, h3, h4, h5 {
   color: rgba(255, 253, 248, 0.88) !important;
   font-size: clamp(1.03rem, 1.25vw, 1.22rem);
   line-height: 1.68;
+  overflow-wrap: anywhere;
 }
 
 .vandan-hero__actions,
@@ -3868,19 +3874,20 @@ h1, h2, h3, h4, h5 {
   width: min(100%, var(--site-container));
   margin-inline: auto;
   gap: 1rem;
+  align-items: stretch;
 }
 
 .vandan-category-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
 }
 
 .vandan-reason-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
 }
 
 .vandan-featured-grid,
 .vandan-testimonial-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
 }
 
 .vandan-category-card,
@@ -3907,6 +3914,7 @@ h1, h2, h3, h4, h5 {
 .vandan-featured-card a {
   display: grid;
   min-height: 100%;
+  min-width: 0;
 }
 
 .vandan-category-card__image,
@@ -3939,6 +3947,7 @@ h1, h2, h3, h4, h5 {
   display: grid;
   gap: 0.65rem;
   padding: 1.15rem;
+  min-width: 0;
 }
 
 .vandan-category-card__body span,
@@ -3960,6 +3969,7 @@ h1, h2, h3, h4, h5 {
   color: var(--vh-ink) !important;
   font-size: 1.12rem;
   line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .vandan-category-card p,
@@ -3969,6 +3979,7 @@ h1, h2, h3, h4, h5 {
   color: var(--vh-muted) !important;
   font-size: 0.92rem;
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .vandan-category-card small {
@@ -4022,7 +4033,7 @@ h1, h2, h3, h4, h5 {
 
 .vandan-printing__list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   gap: 0.75rem;
   margin: 0.35rem 0 0.3rem;
 }
@@ -4232,6 +4243,218 @@ h1, h2, h3, h4, h5 {
 
   .vandan-cta__panel {
     border-radius: 24px;
+  }
+}
+
+/* ─── Responsive refinements for the hero banner ─── */
+
+/* Improved veil gradient for better text readability across all screen sizes */
+.vandan-hero__veil {
+  background:
+    linear-gradient(90deg, rgba(23, 35, 31, 0.78) 0%, rgba(23, 35, 31, 0.48) 42%, rgba(23, 35, 31, 0.12) 100%),
+    linear-gradient(180deg, rgba(23, 35, 31, 0.06) 0%, rgba(23, 35, 31, 0.08) 30%, rgba(23, 35, 31, 0.48) 100%);
+}
+
+/* Better heading overflow protection */
+.vandan-hero h1 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: none;
+}
+
+/* Ensure content positioning works on all screen sizes */
+.vandan-hero__content {
+  max-width: 100%;
+}
+
+.vandan-hero__content > div {
+  width: min(100%, 720px);
+}
+
+/* 480px–700px: Mid-range refinements */
+@media (min-width: 481px) and (max-width: 700px) {
+  .vandan-hero__banner {
+    min-height: clamp(34rem, 84vw, 42rem);
+    border-radius: 24px;
+  }
+
+  .vandan-hero__content {
+    padding: 1.5rem 1.75rem 5.5rem;
+  }
+
+  .vandan-hero h1 {
+    font-size: clamp(2.65rem, 10vw, 3.8rem);
+    line-height: 1.02;
+  }
+
+  .vandan-hero__content p:not(.vandan-eyebrow) {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .vandan-btn {
+    min-height: 3rem;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.1rem;
+  }
+}
+
+/* 321px–480px: Compact mobile optimizations */
+@media (max-width: 480px) {
+  .vandan-hero__content {
+    padding: 0.9rem 0.9rem 1.2rem;
+  }
+
+  .vandan-hero__content > div {
+    width: min(100%, 30rem);
+  }
+
+  .vandan-eyebrow {
+    font-size: 0.68rem;
+    line-height: 1.35;
+  }
+
+  .vandan-partner h2,
+  .vandan-section h2,
+  .vandan-printing h2,
+  .vandan-cta h2 {
+    font-size: clamp(1.75rem, 9vw, 2.45rem);
+    line-height: 1.08;
+  }
+
+  .vandan-category-card__body,
+  .vandan-featured-card__body {
+    padding: 1rem;
+  }
+
+  .vandan-testimonial-card {
+    padding: 1rem;
+  }
+}
+
+/* 320px–480px banner refinements */
+@media (max-width: 480px) {
+  .vandan-hero__banner {
+    min-height: 28rem;
+    border-radius: 16px;
+  }
+
+  .vandan-hero__content {
+    inset: auto 0 0;
+    padding: 1rem 1rem 1.35rem;
+  }
+
+  .vandan-hero h1 {
+    font-size: clamp(1.85rem, 9vw, 2.8rem);
+    line-height: 1.06;
+  }
+
+  .vandan-hero__content p:not(.vandan-eyebrow) {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 0.1rem;
+  }
+
+  .vandan-eyebrow {
+    font-size: 0.65rem;
+  }
+
+  .vandan-hero__actions {
+    gap: 0.6rem;
+  }
+
+  .vandan-btn {
+    min-height: 2.75rem;
+    font-size: 0.85rem;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .vandan-btn svg {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+}
+
+/* 320px–360px: Very small screens */
+@media (max-width: 360px) {
+  .vandan-hero__banner {
+    min-height: 22rem;
+    border-radius: 12px;
+  }
+
+  .vandan-hero__content {
+    padding: 0.75rem 0.75rem 1rem;
+  }
+
+  .vandan-hero h1 {
+    font-size: clamp(1.55rem, 8vw, 2.2rem);
+    line-height: 1.08;
+  }
+
+  .vandan-hero__content p:not(.vandan-eyebrow) {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+
+  .vandan-eyebrow {
+    font-size: 0.6rem;
+  }
+
+  .vandan-btn {
+    min-height: 2.5rem;
+    font-size: 0.8rem;
+    padding: 0.55rem 0.75rem;
+  }
+}
+
+/* Landscape orientation on mobile (< 768px height) */
+@media (max-height: 500px) and (orientation: landscape) {
+  .vandan-hero__banner {
+    min-height: 85vh;
+    max-height: 40rem;
+  }
+
+  .vandan-hero__content {
+    padding: 1rem 1.5rem 1.25rem;
+  }
+
+  .vandan-hero h1 {
+    font-size: clamp(1.6rem, 5vw, 2.8rem);
+  }
+
+  .vandan-hero__content p:not(.vandan-eyebrow) {
+    display: none;
+  }
+
+  .vandan-hero__actions {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .vandan-btn {
+    min-height: 2.4rem;
+    font-size: 0.78rem;
+    padding: 0.5rem 0.85rem;
+    width: auto;
+  }
+}
+
+/* High-DPI and ultrawide displays */
+@media (min-width: 1920px) {
+  .vandan-hero__banner {
+    max-width: 1800px;
+    margin-inline: auto;
+  }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .vandan-hero__banner img {
+    transition: none !important;
+  }
+
+  .vandan-hero__banner:hover img {
+    transform: none !important;
   }
 }
 
@@ -6931,13 +7154,13 @@ p {
   }
 
   .vandan-hero__carousel {
-    min-height: clamp(34rem, 78vw, 42rem);
+    min-height: clamp(32rem, 84vw, 42rem);
   }
 
   .vandan-hero__content {
-    left: clamp(1rem, 5vw, 2rem);
-    right: clamp(1rem, 5vw, 2rem);
-    bottom: clamp(5.5rem, 12vw, 7rem);
+    left: clamp(1rem, 4vw, 2rem);
+    right: clamp(1rem, 4vw, 2rem);
+    bottom: clamp(4.5rem, 10vw, 6.5rem);
     max-width: min(42rem, calc(100% - 2rem));
   }
 
@@ -6960,12 +7183,23 @@ p {
   }
 
   .vandan-hero__carousel {
-    min-height: clamp(31rem, 120vw, 38rem);
+    min-height: clamp(34rem, 132vw, 42rem);
     border-radius: 0;
   }
 
+  .vandan-hero__content {
+    inset: auto 0 0;
+    padding: clamp(1rem, 4vw, 1.5rem);
+    align-items: flex-end;
+  }
+
+  .vandan-hero__content > div {
+    width: min(100%, 34rem);
+    gap: 0.85rem;
+  }
+
   .vandan-hero h1 {
-    font-size: clamp(2.15rem, 11vw, 3.6rem);
+    font-size: clamp(2rem, 10vw, 3.5rem);
     line-height: 1.04;
   }
 
@@ -6978,6 +7212,7 @@ p {
   .vandan-cta__actions {
     width: 100%;
     align-items: stretch;
+    flex-direction: column;
   }
 
   .vandan-btn {
@@ -7022,7 +7257,11 @@ p {
 
 @media (max-width: 480px) {
   .vandan-hero__content {
-    bottom: 5.2rem;
+    padding: 0.9rem 0.9rem 1.2rem;
+  }
+
+  .vandan-hero__content > div {
+    width: min(100%, 30rem);
   }
 
   .vandan-eyebrow {
@@ -7064,5 +7303,205 @@ p {
 
   .vandan-hero__dots {
     left: 0.9rem;
+  }
+}
+
+/* ─── Static Hero Banner ─── */
+.vandan-hero__banner {
+  position: relative;
+  width: min(100%, calc(var(--site-container, 1200px) + 120px));
+  min-height: clamp(24rem, 60vh, 44rem);
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 30px;
+  background: var(--vh-cream, #f5eadb);
+  border: 1px solid rgba(255, 253, 248, 0.9);
+  box-shadow: var(--vh-shadow, 0 24px 70px rgba(49, 54, 44, 0.13));
+  isolation: isolate;
+}
+
+.vandan-hero__banner img {
+  transition: transform 8s ease;
+}
+
+.vandan-hero__banner:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 700px) {
+  .vandan-hero__banner {
+    min-height: clamp(28rem, 100vw, 36rem);
+    border-radius: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vandan-hero__banner {
+    min-height: 26rem;
+    border-radius: 16px;
+  }
+}
+
+/* ─── Product Card Image Container ─── */
+.product-card__image-container {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.product-card__image-container img {
+  padding: 0.75rem;
+  object-fit: contain !important;
+}
+
+/* Ensure all product cards stretch to equal height via flex parent */
+.product-grid,
+.printing-solutions-grid {
+  align-items: stretch;
+}
+
+.product-grid > *,
+.printing-solutions-grid > * {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Responsive Improvements ─── */
+
+/* Fix mobile menu button: show between 640px-1024px where nav is hidden */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .site-header__menu-btn {
+    display: flex !important;
+  }
+}
+
+/* Ensure grids use auto-fit on mid-range screens for better flow */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .vandan-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vandan-featured-grid,
+  .vandan-testimonial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vandan-reason-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vandan-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Ensure tables don't overflow on mobile */
+.compatibility-results {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.compatibility-row {
+  min-width: 0;
+}
+
+.compat-printer,
+.compat-film,
+.compat-sizes,
+.compat-spec {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Contact form responsive */
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .contact-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-form__full {
+    grid-column: 1 / -1;
+  }
+
+  .contact-form__submit {
+    grid-column: 1 / -1;
+  }
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Footer responsive improvements */
+@media (max-width: 480px) {
+  .site-footer__grid {
+    gap: 1.5rem;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Images global responsive rule */
+.vandan-home img,
+.medical-site img,
+.site-main img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent any child from causing horizontal overflow */
+.vandan-home > *,
+.medical-site > *,
+.site-main > * {
+  max-width: 100%;
+}
+
+/* Fix the site-footer brand lockup on mobile */
+.site-footer__brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Ensure consistent card heights in product grids */
+.product-grid .product-card,
+.printing-solutions-grid .product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Fix potential ultrawide layout - cap content width */
+@media (min-width: 1920px) {
+  .vandan-hero {
+    max-width: 2200px;
+    margin-inline: auto;
+  }
+
+  .vandan-partner,
+  .vandan-section,
+  .vandan-printing,
+  .vandan-cta {
+    max-width: 2200px;
+    margin-inline: auto;
   }
 }
