@@ -68,13 +68,13 @@ export default function PrintingSolutionsPage() {
           {printingSolutions.map((solution, i) => (
             <FadeIn key={solution.id} delay={i * 0.08}>
               <Card className="printing-solution-card glossy-card h-full overflow-hidden border-0 ring-0">
-                <div className="relative aspect-[16/9] w-full overflow-hidden">
+                <div className="product-card__image-container relative aspect-[16/9] w-full overflow-hidden flex items-center justify-center bg-white">
                   <Image
                     src={solution.image}
                     alt={solution.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
+                    className="object-contain p-3"
                   />
                   <Badge className="absolute left-4 top-4 bg-[#e85d26] text-white">{solution.modality}</Badge>
                 </div>
@@ -154,4 +154,3 @@ export default function PrintingSolutionsPage() {
     </PageShell>
   );
 }
-

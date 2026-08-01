@@ -34,8 +34,8 @@ export default function XRayFilmsPage() {
           {dryFilmProducts.map((film) => (
             <FadeIn key={film.id}>
               <Card className="film-product-card glossy-card h-full overflow-hidden border-0 ring-0">
-                <div className="relative aspect-[16/10] w-full overflow-hidden">
-                  <Image src={film.image} alt={film.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+                <div className="product-card__image-container relative aspect-[16/10] w-full overflow-hidden flex items-center justify-center bg-white">
+                  <Image src={film.image} alt={film.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-contain p-3" />
                   <Badge className="absolute left-3 top-3 bg-white/90 text-[#7a6a43]">{film.brand}</Badge>
                 </div>
                 <CardHeader>

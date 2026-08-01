@@ -1,11 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  ArrowLeft,
   ArrowRight,
   BadgeCheck,
   HeartPulse,
@@ -39,32 +37,7 @@ const reveal = {
   transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
 } as const;
 
-const heroSlides = [
-  {
-    eyebrow: "Medical imaging solutions",
-    title: "Premium radiology films and imaging workflows.",
-    copy: "Vandan Distributors helps radiologists, hospitals, and diagnostic centres present MRI, CT, X-ray, and diagnostic outputs with confidence.",
-    image: printImages.heroPrimary,
-  },
-  {
-    eyebrow: "Printed CT scan outputs",
-    title: "Clean printed outputs for confident clinical review.",
-    copy: "Focused radiology supplies, contrast media, and solutions for teams that need quality, consistency, and responsive guidance.",
-    image: printImages.printMedia,
-  },
-  {
-    eyebrow: "X-ray and radiology films",
-    title: "Clean diagnostic film output for everyday imaging.",
-    copy: "Reliable film supply and compatibility-led support for dry imaging, manual workflows, and high-volume diagnostic departments.",
-    image: printImages.filmPack,
-  },
-  {
-    eyebrow: "MRI and CT outputs",
-    title: "Clear printed imaging output for professional review.",
-    copy: "Medical printing media and MIPS workflows designed around readable imaging output, practical cost control, and dependable service.",
-    image: printImages.contrastPrint,
-  },
-];
+
 
 const partnerStats = [
   { value: "2007", label: "Operating Since" },
@@ -135,19 +108,6 @@ const printingHighlights = [
 ];
 
 export function HomePage() {
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveSlide((current) => (current + 1) % heroSlides.length);
-    }, 4600);
-
-    return () => window.clearInterval(timer);
-  }, []);
-
-  const nextSlide = () => setActiveSlide((current) => (current + 1) % heroSlides.length);
-  const previousSlide = () =>
-    setActiveSlide((current) => (current - 1 + heroSlides.length) % heroSlides.length);
 
   const whatsappHref = `https://api.whatsapp.com/send?phone=${site.brand.whatsappNumber}&text=${encodeURIComponent(
     "Hello, I want a product consultation for Vandan Distributors."
@@ -156,66 +116,36 @@ export function HomePage() {
   return (
     <div className="vandan-home">
       <section className="vandan-hero" aria-label="Vandan Distributors homepage hero">
-        <div className="vandan-hero__carousel" aria-roledescription="carousel">
-          {heroSlides.map((slide, index) => (
-            <article
-              key={slide.title}
-              className={`vandan-hero__slide ${index === activeSlide ? "vandan-hero__slide--active" : ""}`}
-              aria-hidden={index !== activeSlide}
+        <div className="vandan-hero__banner">
+          <Image
+            src="/images/radiology-hero-banner.png"
+            alt="Vandan Distributors – Radiology & Medical Imaging Solutions"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="vandan-hero__veil" />
+          <div className="vandan-hero__content">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                fill
-                priority={index === 0}
-                sizes="100vw"
-                className="object-cover"
-              />
-              <div className="vandan-hero__veil" />
-              <div className="vandan-hero__content">
-                <motion.div
-                  key={activeSlide}
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  <p className="vandan-eyebrow">{slide.eyebrow}</p>
-                  <h1>{slide.title}</h1>
-                  <p>{slide.copy}</p>
-                  <div className="vandan-hero__actions">
-                    <a className="vandan-btn vandan-btn--primary" href={whatsappHref} target="_blank" rel="noreferrer">
-                      <MessageCircle className="size-4" />
-                      Request Consultation
-                    </a>
-                    <Link className="vandan-btn vandan-btn--secondary" href="/products">
-                      Explore products
-                      <ArrowRight className="size-4" />
-                    </Link>
-                  </div>
-                </motion.div>
+              <p className="vandan-eyebrow">{site.hero.eyebrow}</p>
+              <h1>{site.hero.headline}</h1>
+              <p>{site.hero.lede}</p>
+              <div className="vandan-hero__actions">
+                <a className="vandan-btn vandan-btn--primary" href={whatsappHref} target="_blank" rel="noreferrer">
+                  <MessageCircle className="size-4" />
+                  Request Consultation
+                </a>
+                <Link className="vandan-btn vandan-btn--secondary" href="/products">
+                  Explore products
+                  <ArrowRight className="size-4" />
+                </Link>
               </div>
-            </article>
-          ))}
-
-          <button type="button" className="vandan-hero__arrow vandan-hero__arrow--prev" onClick={previousSlide} aria-label="Previous slide">
-            <ArrowLeft className="size-5" />
-          </button>
-          <button type="button" className="vandan-hero__arrow vandan-hero__arrow--next" onClick={nextSlide} aria-label="Next slide">
-            <ArrowRight className="size-5" />
-          </button>
-
-          <div className="vandan-hero__dots" role="tablist" aria-label="Choose hero slide">
-            {heroSlides.map((slide, index) => (
-              <button
-                key={slide.title}
-                type="button"
-                role="tab"
-                className={`vandan-hero__dot ${index === activeSlide ? "vandan-hero__dot--active" : ""}`}
-                onClick={() => setActiveSlide(index)}
-                aria-label={`Show ${slide.eyebrow}`}
-                aria-selected={index === activeSlide}
-              />
-            ))}
+            </motion.div>
           </div>
         </div>
       </section>
@@ -250,7 +180,7 @@ export function HomePage() {
             <motion.article className="vandan-category-card" key={category.slug} {...reveal} transition={{ ...reveal.transition, delay: index * 0.06 }}>
               <Link href={category.href}>
                 <div className="vandan-category-card__image">
-                  <Image src={categoryPrintImages[category.slug] ?? printImages.heroPrimary} alt={category.title} fill sizes="(max-width: 900px) 100vw, 25vw" className="object-cover" />
+                  <Image src={categoryPrintImages[category.slug] ?? printImages.heroPrimary} alt={category.title} fill sizes="(max-width: 900px) 100vw, 25vw" className="object-contain p-4" />
                 </div>
                 <div className="vandan-category-card__body">
                   <span>{category.tag}</span>
@@ -294,7 +224,7 @@ export function HomePage() {
             <motion.article className="vandan-featured-card" key={item.title} {...reveal} transition={{ ...reveal.transition, delay: index * 0.08 }}>
               <Link href={item.href}>
                 <div className="vandan-featured-card__image">
-                  <Image src={item.image} alt={item.title} fill sizes="(max-width: 900px) 100vw, 33vw" className="object-cover" />
+                  <Image src={item.image} alt={item.title} fill sizes="(max-width: 900px) 100vw, 33vw" className="object-contain p-4" />
                 </div>
                 <div className="vandan-featured-card__body">
                   <span>{item.tag}</span>

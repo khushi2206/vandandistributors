@@ -1,0 +1,36 @@
+:where(.category-grid, .product-grid, .testimonials-grid, .downloads-grid, .printing-solutions-grid, .vandan-category-grid, .vandan-reason-grid, .vandan-featured-grid, .vandan-testimonial-grid, .why-us-grid, .coverage-grid, .about-grid, .values-grid, .why-choose-grid, .intro-grid, .contact-grid, .mips-overview, .spec-card-grid) > * {
+  min-width: 0;
+}
+
+:where(.product-card, .category-card, .film-product-card, .printing-solution-card, .download-card, .medical-product-card, .vandan-category-card, .vandan-featured-card, .vandan-reason-card, .vandan-testimonial-card, .why-us-card, .gallery-card, .industry-card, .process-journey__item) {
+  min-width: 0;
+}
+
+:where(.product-card, .category-card, .film-product-card, .printing-solution-card, .download-card, .medical-product-card, .vandan-category-card, .vandan-featured-card, .vandan-reason-card, .vandan-testimonial-card, .why-us-card) [data-slot="card-title"],
+:where(.product-card, .category-card, .film-product-card, .printing-solution-card, .download-card, .medical-product-card, .vandan-category-card, .vandan-featured-card, .vandan-reason-card, .vandan-testimonial-card, .why-us-card) [data-slot="card-description"] {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+}
+
+:where(.product-card, .category-card, .film-product-card, .printing-solution-card, .download-card) [data-slot="card-footer"] {
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 560px) {
+  :where(.product-card, .category-card, .film-product-card, .printing-solution-card, .download-card) [data-slot="card-footer"] {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  :where(.product-card, .category-card, .film-product-card, .printing-solution-card, .download-card) [data-slot="card-footer"] > * {
+    width: 100%;
+    min-width: 0;
+  }
+
+  :where(.product-card, .category-card, .film-product-card, .printing-solution-card, .download-card) [data-slot="button"] {
+    width: 100%;
+  }
+}

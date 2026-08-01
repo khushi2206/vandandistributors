@@ -38,7 +38,7 @@ export const printingSolutions: PrintingSolution[] = [
       "Per-print billing with no capex",
     ],
     outputFormats: ['10" x 12"', '14" x 17"', "A4 PVC", "A4 Paper", "A3 PVC", "A3 Paper", '13" x 17"'],
-    image: "/images/products/20250913_131833.jpg.jpeg",
+    image: "/images/solutions/ct-solution.jpg",
   },
   {
     id: "ct-printing",
@@ -53,7 +53,7 @@ export const printingSolutions: PrintingSolution[] = [
       "Included maintenance and ink supply",
     ],
     outputFormats: ['8" x 10"', '10" x 12"', '14" x 17"', "A4 PVC", "A4 Paper", "A3 Paper", "A3 PVC", '13" x 17"'],
-    image: "/images/products/WhatsApp-Image-2026-06-02-at-10.04.30-PM.jpeg",
+    image: "/images/solutions/ct-solution.jpg",
   },
   {
     id: "ultrasound-printing",
@@ -72,7 +72,7 @@ export const printingSolutions: PrintingSolution[] = [
       { label: "Glossy Roll", options: ["Sony High Glossy Roll", "Olympus High Glossy Roll"] },
       { label: "Standard Roll", options: ["Sony Normal Roll", "Olympus Normal Roll"] },
     ],
-    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.42.35-PM.jpeg",
+    image: "/images/solutions/usg-solution.jpg",
   },
   {
     id: "xray-printing",
@@ -87,7 +87,7 @@ export const printingSolutions: PrintingSolution[] = [
       "Zero capital expense model",
     ],
     outputFormats: ['8" x 10"', '10" x 12"', '13" x 17"', "A4 PVC", "A4 Paper", "A3 Paper", "A3 PVC"],
-    image: "/images/products/WhatsApp-Image-2026-06-02-at-10.04.30-PM-1.jpeg",
+    image: "/images/solutions/xray-solution.jpg",
   },
   {
     id: "pet-ct-printing",
@@ -102,7 +102,7 @@ export const printingSolutions: PrintingSolution[] = [
       "End-to-end service and maintenance",
     ],
     outputFormats: ['10" x 12"', '14" x 17"', "A4 PVC", "A4 Paper", "A3 PVC", "A3 Paper"],
-    image: "/images/products/20250913_130304.jpg.jpeg",
+    image: "/images/solutions/pet-ct-solution.jpg",
   },
 ];
 

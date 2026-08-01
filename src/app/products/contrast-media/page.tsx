@@ -12,7 +12,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: `Contrast Media | ${site.brand.name}`,
-  description: "Contrast media portfolio - non-ionic, ionic, iso-osmolar, and MRI contrast agents for CT, angiography, and MR imaging.",
+  description: "Contrast media portfolio - non-ionic, ionic, iso-osmolar, and MRI contrast agents for CT, angiography, and MRI imaging.",
 };
 
 export default function ContrastMediaPage() {
@@ -39,6 +39,8 @@ export default function ContrastMediaPage() {
                   image={p.image}
                   category={p.subcategory}
                   tags={[p.activeIngredient, ...(p.iodineConc ? [p.iodineConc] : []), ...p.packs.slice(0, 2)]}
+                  specifications={p.specifications}
+                  usedFor={p.usedFor}
                   brochure={p.brochure}
                   delay={i * 0.06}
                 />

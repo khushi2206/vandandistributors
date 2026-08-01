@@ -148,7 +148,7 @@
   color: var(--text-primary);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1024px) {
   .site-header__menu-btn {
     display: none;
   }
@@ -327,45 +327,22 @@
 .printing-solutions-grid {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 clamp(1.5rem, 4vw, 3rem);
-}
-
-@media (min-width: 640px) {
-  .category-grid,
-  .product-grid,
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .printing-solutions-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .downloads-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .downloads-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  align-items: stretch;
 }
 
 .category-card-link {
   display: block;
   height: 100%;
+  min-width: 0;
 }
 
 .category-card {
   height: 100%;
+  min-width: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -385,6 +362,54 @@
 
 .product-card {
   height: 100%;
+  min-width: 0;
+}
+
+.product-grid > *,
+.category-grid > *,
+.testimonials-grid > *,
+.downloads-grid > *,
+.printing-solutions-grid > * {
+  min-width: 0;
+}
+
+.product-card [data-slot="card-footer"],
+.category-card [data-slot="card-footer"],
+.printing-solution-card [data-slot="card-footer"],
+.film-product-card [data-slot="card-footer"],
+.download-card [data-slot="card-footer"] {
+  width: 100%;
+}
+
+.product-card [data-slot="button"],
+.category-card [data-slot="button"],
+.printing-solution-card [data-slot="button"],
+.film-product-card [data-slot="button"],
+.download-card [data-slot="button"] {
+  min-width: 0;
+}
+
+.product-card [data-slot="card-title"],
+.product-card [data-slot="card-description"],
+.category-card [data-slot="card-title"],
+.category-card [data-slot="card-description"],
+.printing-solution-card [data-slot="card-title"],
+.printing-solution-card [data-slot="card-description"],
+.film-product-card [data-slot="card-title"],
+.film-product-card [data-slot="card-description"],
+.download-card [data-slot="card-title"],
+.download-card [data-slot="card-description"] {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.product-card [data-slot="card-footer"],
+.category-card [data-slot="card-footer"],
+.printing-solution-card [data-slot="card-footer"],
+.film-product-card [data-slot="card-footer"],
+.download-card [data-slot="card-footer"] {
+  flex-wrap: wrap;
 }
 
 /* Home intro */

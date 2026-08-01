@@ -4,7 +4,7 @@ export const productCategories = [
     href: "/products/contrast-media",
     title: "Contrast Media",
     description:
-      "Complete Vandan Distributors range - non-ionic, ionic, iso-osmolar, and MRI contrast agents for CT, angiography, and MR imaging.",
+      "Complete Vandan Distributors range - non-ionic, ionic, iso-osmolar, and MRI contrast agents for CT, angiography, and MRI imaging.",
     image: "/images/contrast-media/contrapaque-350-mg-200ml.jpg",
     tag: "Contrast Media",
   },

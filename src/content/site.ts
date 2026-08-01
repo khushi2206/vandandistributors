@@ -16,7 +16,7 @@ export const site = {
     whatsappLink: "https://wa.me/919428460003",
     whatsappNumber: "919428460003",
     mapsLink:
-      "https://www.google.com/maps/search/?api=1&query=VANDAN%20DISTRIBUTORS%2C%20Second%20Floor%20Shop%20No.%20218-221%2C%20Heritage%20Trade%20Center%2C%20Kada%20Road%2C%20Opp.%20Navi%20Kanya%20Vidhalay%2C%20Vijay%20Para%2C%20Visnagar%2C%20Gujarat%20384315",
+      "https://maps.app.goo.gl/w3fWJHjygp1exR2YA?g_st=aw",
     mapsEmbedUrl:
       "https://maps.google.com/maps?q=Second%20Floor%20Shop%20No.%20218-221%2C%20Heritage%20Trade%20Center%2C%20Kada%20Road%2C%20Opp.%20Navi%20Kanya%20Vidhalay%2C%20Vijay%20Para%2C%20Visnagar%2C%20Gujarat%20384315%2C%20India&output=embed",
     location:
@@ -29,7 +29,6 @@ export const site = {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Products", href: "/products" },
-    { label: "Downloads", href: "/downloads" },
     { label: "Testimonials", href: "/testimonials" },
     { label: "Contact", href: "/contact" },
   ] as const,

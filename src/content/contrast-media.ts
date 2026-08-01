@@ -8,6 +8,8 @@ export type ContrastProduct = {
   iodineConc?: string;
   packs: string[];
   image: string;
+  specifications?: string[];
+  usedFor?: string[];
   brochure?: string;
 };
 
@@ -57,18 +59,27 @@ const normalizeImageKey = (value: string) =>
 
 const getContrastMediaImage = (productId: string, productName: string, activeIngredient: string) => {
   const candidates = [
-    ...(contrastImageAliases[productId] ?? []),
-    productId,
     productName,
+    productId,
     activeIngredient,
+    ...(contrastImageAliases[productId] ?? []),
   ].map(normalizeImageKey);
 
-  return (
-    contrastMediaImages.find((image) => {
+  const scoredMatches = contrastMediaImages
+    .map((image) => {
       const imageKey = normalizeImageKey(image.split("/").pop() ?? image);
-      return candidates.some((candidate) => candidate && imageKey.includes(candidate));
-    }) ?? defaultContrastMediaImage
-  );
+      const score = candidates.reduce((best, candidate) => {
+        if (!candidate) return best;
+        if (imageKey === candidate) return Math.max(best, candidate.length + 100);
+        if (imageKey.includes(candidate)) return Math.max(best, candidate.length);
+        return best;
+      }, 0);
+
+      return { image, score };
+    })
+    .sort((left, right) => right.score - left.score);
+
+  return scoredMatches[0]?.score ? scoredMatches[0].image : defaultContrastMediaImage;
 };
 
 export const contrastCategories = [
@@ -95,29 +106,74 @@ export const contrastCategories = [
 /** Vandan Distributors contrast media product catalogue */
 export const contrastProducts: ContrastProduct[] = [
   {
-    id: "lek-pamidol",
-    name: "Lek-Pamidol Injection",
+    id: "lek-pamidol-300",
+    name: "Lek-Pamidol 300 mg / 100 ml",
     activeIngredient: "Iopamidol",
     category: "x-ray",
     subcategory: "Non-Ionic Contrast Media",
     description:
       "Non-ionic iodinated contrast medium for intravenous use in CT, angiography, and urography. Low osmolality profile for improved patient tolerance.",
-    iodineConc: "300 / 340 / 370 mg/mL",
-    packs: ["20 mL amp", "50 mL vial", "100 mL vial"],
-    image: getContrastMediaImage("lek-pamidol", "Lek-Pamidol Injection", "Iopamidol"),
+    iodineConc: "300 mg/mL",
+    packs: ["100 mL vial"],
+    image: getContrastMediaImage("lek-pamidol", "Lek-Pamidol 300 mg / 100 ml", "Iopamidol"),
+    specifications: ["Iopamidol 61.2% w/v", "Iodine concentration: 300 mg/mL", "Pack size: 100 mL vial"],
     brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
   },
   {
-    id: "contrapaque",
-    name: "Contrapaque Injection",
+    id: "contrapaque-300-100ml",
+    name: "Contrapaque 300 mg / 100 ml",
     activeIngredient: "Iohexol",
     category: "x-ray",
     subcategory: "Non-Ionic Contrast Media",
     description:
       "Widely used non-ionic contrast agent for CT, IV urography, angiocardiography, and peripheral angiography with excellent safety profile.",
-    iodineConc: "300 / 350 mg/mL",
-    packs: ["20 mL amp", "50 mL vial", "100 mL vial", "200 mL vial"],
-    image: getContrastMediaImage("contrapaque", "Contrapaque Injection", "Iohexol"),
+    iodineConc: "300 mg/mL",
+    packs: ["100 mL vial"],
+    image: getContrastMediaImage("contrapaque", "Contrapaque 300 mg / 100 ml", "Iohexol"),
+    specifications: ["Iohexol 64.7% w/v", "Iodine concentration: 300 mg/mL", "Pack size: 100 mL vial"],
+    brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
+  },
+  {
+    id: "contrapaque-350-50ml",
+    name: "Contrapaque 350 mg / 50 ml",
+    activeIngredient: "Iohexol",
+    category: "x-ray",
+    subcategory: "Non-Ionic Contrast Media",
+    description:
+      "High-strength non-ionic contrast agent for CT, coronary angiography, and peripheral vascular studies.",
+    iodineConc: "350 mg/mL",
+    packs: ["50 mL vial"],
+    image: getContrastMediaImage("contrapaque", "Contrapaque 350 mg / 50 ml", "Iohexol"),
+    specifications: ["Iohexol 75.5% w/v", "Iodine concentration: 350 mg/mL", "Pack size: 50 mL vial"],
+    brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
+  },
+  {
+    id: "contrapaque-350-100ml",
+    name: "Contrapaque 350 mg / 100 ml",
+    activeIngredient: "Iohexol",
+    category: "x-ray",
+    subcategory: "Non-Ionic Contrast Media",
+    description:
+      "High-strength non-ionic contrast agent for CT, coronary angiography, and peripheral vascular studies.",
+    iodineConc: "350 mg/mL",
+    packs: ["100 mL vial"],
+    image: getContrastMediaImage("contrapaque", "Contrapaque 350 mg / 100 ml", "Iohexol"),
+    specifications: ["Iohexol 75.5% w/v", "Iodine concentration: 350 mg/mL", "Pack size: 100 mL vial"],
+    brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
+  },
+  {
+    id: "contrapaque-350-200ml",
+    name: "Contrapaque 350 mg / 200 ml",
+    activeIngredient: "Iohexol",
+    category: "x-ray",
+    subcategory: "Non-Ionic Contrast Media",
+    description:
+      "High-volume non-ionic contrast formulation for complex angiographic and interventional procedures.",
+    iodineConc: "350 mg/mL",
+    packs: ["200 mL vial"],
+    image: getContrastMediaImage("contrapaque", "Contrapaque 350 mg / 200 ml", "Iohexol"),
+    specifications: ["Iohexol 75.5% w/v", "Iodine concentration: 350 mg/mL", "Pack size: 200 mL vial"],
+    usedFor: ["Angiography", "Angioplasty", "Used by Cardiologist doctors"],
     brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
   },
   {
