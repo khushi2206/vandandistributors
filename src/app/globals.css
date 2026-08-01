@@ -5748,22 +5748,22 @@ body {
 
 /* Warm premium healthcare redesign: ivory, calm medical tones, restrained gold */
 :root {
-  --warm-paper: #fbf8f0;
-  --warm-ivory: #fffdf7;
-  --warm-cream: #f4ead8;
-  --warm-beige: #e7dac3;
-  --warm-card: rgba(255, 253, 247, 0.94);
-  --warm-card-soft: rgba(250, 244, 233, 0.9);
-  --warm-ink: #2b261f;
-  --warm-muted: #756d61;
-  --warm-medical: #667765;
-  --warm-medical-deep: #4e6152;
-  --warm-gold: #b89552;
-  --warm-gold-soft: #e3cc99;
-  --warm-line: rgba(122, 106, 67, 0.18);
-  --warm-line-strong: rgba(122, 106, 67, 0.3);
-  --warm-shadow: 0 24px 66px rgba(72, 58, 35, 0.13);
-  --warm-shadow-soft: 0 12px 34px rgba(72, 58, 35, 0.08);
+  --warm-paper: #e0e1dd;
+  --warm-ivory: #f4f5f1;
+  --warm-cream: #e0e1dd;
+  --warm-beige: #778da9;
+  --warm-card: rgba(224, 225, 221, 0.94);
+  --warm-card-soft: rgba(224, 225, 221, 0.9);
+  --warm-ink: #0d1b2a;
+  --warm-muted: #415a77;
+  --warm-medical: #1b263b;
+  --warm-medical-deep: #0d1b2a;
+  --warm-gold: #415a77;
+  --warm-gold-soft: #778da9;
+  --warm-line: rgba(27, 38, 59, 0.18);
+  --warm-line-strong: rgba(27, 38, 59, 0.3);
+  --warm-shadow: 0 24px 66px rgba(13, 27, 42, 0.13);
+  --warm-shadow-soft: 0 12px 34px rgba(13, 27, 42, 0.08);
   --brand-ink: var(--warm-ink);
   --brand-muted: var(--warm-muted);
   --brand-soft: var(--warm-cream);
@@ -5800,7 +5800,7 @@ body {
 
 body {
   background:
-    linear-gradient(180deg, #fffdf7 0%, #fbf8f0 34%, #f5ecdc 100%) !important;
+    linear-gradient(180deg, #f4f5f1 0%, #e0e1dd 34%, #d8d9d4 100%) !important;
   color: var(--warm-ink);
 }
 
