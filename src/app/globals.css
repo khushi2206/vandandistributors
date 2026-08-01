@@ -7505,3 +7505,17 @@ p {
     margin-inline: auto;
   }
 }
+/* Hotfix for Hero Content Overflow */
+.vandan-hero__banner {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+}
+.vandan-hero__content {
+  position: relative !important;
+  inset: auto !important;
+  flex-grow: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
