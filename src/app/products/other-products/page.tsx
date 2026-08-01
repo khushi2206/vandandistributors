@@ -34,7 +34,6 @@ export default function OtherProductsPage() {
                   title={p.name}
                   description={p.description}
                   image={p.image}
-                  brochure={p.brochure}
                   delay={i * 0.05}
                 />
               ))}

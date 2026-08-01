@@ -41,7 +41,6 @@ export default function ContrastMediaPage() {
                   tags={[p.activeIngredient, ...(p.iodineConc ? [p.iodineConc] : []), ...p.packs.slice(0, 2)]}
                   specifications={p.specifications}
                   usedFor={p.usedFor}
-                  brochure={p.brochure}
                   delay={i * 0.06}
                 />
               ))}
