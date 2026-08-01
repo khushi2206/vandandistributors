@@ -18,7 +18,7 @@ export const site = {
     mapsLink:
       "https://maps.app.goo.gl/w3fWJHjygp1exR2YA?g_st=aw",
     mapsEmbedUrl:
-      "https://maps.google.com/maps?q=Second%20Floor%20Shop%20No.%20218-221%2C%20Heritage%20Trade%20Center%2C%20Kada%20Road%2C%20Opp.%20Navi%20Kanya%20Vidhalay%2C%20Vijay%20Para%2C%20Visnagar%2C%20Gujarat%20384315%2C%20India&output=embed",
+      "https://maps.google.com/maps?q=Vandan%20Distributors%2C%20Heritage%20Trade%20Center%2C%20Kada%20Road%2C%20Visnagar%2C%20Gujarat%20384315%2C%20India&output=embed",
     location:
       "Second Floor Shop No. 218-221, Heritage Trade Center, Kada Road, Opp. Navi Kanya Vidhalay, Vijay Para, Visnagar, Gujarat 384315.",
     themeColor: "#7a6a43",
