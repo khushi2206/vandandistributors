@@ -4,7 +4,6 @@ export type OtherProduct = {
   description: string;
   category: string;
   image: string;
-  brochure?: string;
 };
 
 export const otherProductCategories = [
@@ -22,7 +21,6 @@ export const otherProducts: OtherProduct[] = [
     description: "Barium sulphate contrast preparation for GI radiography and fluoroscopy studies.",
     category: "Barium & GI Contrast",
     image: "/images/other-products/microbar-powder-3.5kg.jpg",
-    brochure: "/downloads/broucher-120825.pdf",
   },
   {
     id: "microbar-suspension",
@@ -30,7 +28,6 @@ export const otherProducts: OtherProduct[] = [
     description: "Ready-to-use barium suspension for upper and lower GI tract examinations.",
     category: "Barium & GI Contrast",
     image: "/images/other-products/microbar-suspension-1ltr.jpg",
-    brochure: "/downloads/broucher-120825.pdf",
   },
   {
     id: "microbar-powder",

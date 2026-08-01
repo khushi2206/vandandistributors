@@ -48,7 +48,7 @@ export default function XRayFilmsPage() {
                     <div className="flex flex-wrap gap-2">
                       {film.variants.map((v) => (
                         <Badge key={v.size} variant="outline">
-                          {v.size} - {v.packSize}
+                          {v.size}{v.packSize ? ` - ${v.packSize}` : ""}
                         </Badge>
                       ))}
                     </div>
@@ -86,7 +86,7 @@ export default function XRayFilmsPage() {
                 <div className="flex flex-wrap gap-2">
                   {vmsManualFilms.variants.map((v) => (
                     <Badge key={v.size} variant="secondary" className="font-medium">
-                      {v.size} - {v.packSize}
+                      {v.size}{v.packSize ? ` - ${v.packSize}` : ""}
                       {v.spec ? ` - ${v.spec}` : ""}
                     </Badge>
                   ))}

@@ -10,7 +10,6 @@ export type ContrastProduct = {
   image: string;
   specifications?: string[];
   usedFor?: string[];
-  brochure?: string;
 };
 
 const contrastMediaImages = [
@@ -117,7 +116,6 @@ export const contrastProducts: ContrastProduct[] = [
     packs: ["100 mL vial"],
     image: getContrastMediaImage("lek-pamidol", "Lek-Pamidol 300 mg / 100 ml", "Iopamidol"),
     specifications: ["Iopamidol 61.2% w/v", "Iodine concentration: 300 mg/mL", "Pack size: 100 mL vial"],
-    brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
   },
   {
     id: "contrapaque-300-100ml",
@@ -131,7 +129,6 @@ export const contrastProducts: ContrastProduct[] = [
     packs: ["100 mL vial"],
     image: getContrastMediaImage("contrapaque", "Contrapaque 300 mg / 100 ml", "Iohexol"),
     specifications: ["Iohexol 64.7% w/v", "Iodine concentration: 300 mg/mL", "Pack size: 100 mL vial"],
-    brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
   },
   {
     id: "contrapaque-350-50ml",
@@ -145,7 +142,6 @@ export const contrastProducts: ContrastProduct[] = [
     packs: ["50 mL vial"],
     image: getContrastMediaImage("contrapaque", "Contrapaque 350 mg / 50 ml", "Iohexol"),
     specifications: ["Iohexol 75.5% w/v", "Iodine concentration: 350 mg/mL", "Pack size: 50 mL vial"],
-    brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
   },
   {
     id: "contrapaque-350-100ml",
@@ -159,7 +155,6 @@ export const contrastProducts: ContrastProduct[] = [
     packs: ["100 mL vial"],
     image: getContrastMediaImage("contrapaque", "Contrapaque 350 mg / 100 ml", "Iohexol"),
     specifications: ["Iohexol 75.5% w/v", "Iodine concentration: 350 mg/mL", "Pack size: 100 mL vial"],
-    brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
   },
   {
     id: "contrapaque-350-200ml",
@@ -174,7 +169,6 @@ export const contrastProducts: ContrastProduct[] = [
     image: getContrastMediaImage("contrapaque", "Contrapaque 350 mg / 200 ml", "Iohexol"),
     specifications: ["Iohexol 75.5% w/v", "Iodine concentration: 350 mg/mL", "Pack size: 200 mL vial"],
     usedFor: ["Angiography", "Angioplasty", "Used by Cardiologist doctors"],
-    brochure: "/downloads/Eskay-Iodine---Brochure.pdf",
   },
   {
     id: "trazograf-76",

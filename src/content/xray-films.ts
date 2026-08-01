@@ -54,7 +54,14 @@ export const dryFilmProducts: FilmProduct[] = [
   },
 ];
 
-export const vmsManualFilms = {
+export const vmsManualFilms: {
+  brand: string;
+  title: string;
+  description: string;
+  variants: FilmVariant[];
+  specs: string;
+  image: string;
+} = {
   brand: "VMS Film",
   title: "VMS Manual X-Ray Films (Green)",
   description:
