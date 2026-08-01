@@ -252,7 +252,7 @@ export const contrastProducts: ContrastProduct[] = [
       "Macrocyclic gadolinium chelate offering high stability and excellent contrast enhancement for MRI across body regions.",
     iodineConc: "0.5 mmol/mL",
     packs: ["10 mL vial", "20 mL vial"],
-    image: getContrastMediaImage("gadotrast", "Gadotrast Injection", "Gadoteric Acid"),
+    image: "/images/contrast-media/magnalik-10-ml.jpg", // Temporary placeholder
   },
 ];
 
