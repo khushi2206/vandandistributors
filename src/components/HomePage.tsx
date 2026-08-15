@@ -22,7 +22,7 @@ import { testimonials } from "@/content/testimonials";
 const printImages = {
   heroPrimary: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM.jpeg",
   printMedia: "/images/products/20250913_131833.jpg.jpeg",
-  contrastPrint: "/images/contrast-media/contrapaque-350-mg-200ml.jpg",
+  contrastPrint: "/images/contrast-media/lohexol-injection-usp-300mg.jpg",
   filmPack: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM.jpeg",
   xrayPrint: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM-1.jpeg",
   filmOutput: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM-2.jpeg",
