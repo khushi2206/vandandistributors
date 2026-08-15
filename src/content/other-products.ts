@@ -92,34 +92,7 @@ export const otherProducts: OtherProduct[] = [
     category: "Ultrasound & ECG Consumables",
     image: "/images/other-products/ultrasound-jelly.jpg",
   },
-  {
-    id: "kiran-jelly",
-    name: "Kiran Jelly USG",
-    description: "Premium ultrasound coupling gel for diagnostic and interventional sonography.",
-    category: "Ultrasound & ECG Consumables",
-    image: "/images/other-products/ultrasound-jelly.jpg",
-  },
-  {
-    id: "ecg-gel",
-    name: "ECG Gel",
-    description: "Conductive gel for ECG electrode application ensuring clear signal acquisition.",
-    category: "Ultrasound & ECG Consumables",
-    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.43.41-PM.jpeg",
-  },
-  {
-    id: "ecg-paper",
-    name: "ECG Paper",
-    description: "Thermal ECG recording paper rolls for standard 3/6/12-channel ECG machines.",
-    category: "Ultrasound & ECG Consumables",
-    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.43.54-PM.jpeg",
-  },
-  {
-    id: "tmt-paper",
-    name: "TMT Paper",
-    description: "Thermal paper for treadmill test (TMT) systems and stress ECG monitoring.",
-    category: "Ultrasound & ECG Consumables",
-    image: "/images/products/WhatsApp-Image-2026-06-10-at-11.44.59-PM.jpeg",
-  },
+
   {
     id: "arihant-developer",
     name: "Arihant Developer",
@@ -127,18 +100,5 @@ export const otherProducts: OtherProduct[] = [
     category: "Radiology Accessories",
     image: "/images/other-products/xray-developer-powder.jpg",
   },
-  {
-    id: "arihant-fixer",
-    name: "Arihant Fixer",
-    description: "Film fixer for manual X-ray processing — rapid fixing with long bath life.",
-    category: "Radiology Accessories",
-    image: "/images/other-products/xray-fixer-hardener.jpg",
-  },
-  {
-    id: "kiran-apron",
-    name: "Kiran Head Apron",
-    description: "Lead-equivalent protective apron for radiation shielding in fluoroscopy and interventional suites.",
-    category: "Radiology Accessories",
-    image: "/images/products/PHOTO-2026-01-07-18-14-53.jpg.jpeg",
-  },
+
 ];

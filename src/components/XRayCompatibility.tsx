@@ -38,12 +38,12 @@ export function XRayCompatibility() {
           <CardContent className="p-0">
             <Tabs value={selectedBrand} onValueChange={(v) => setSelectedBrand(v as BrandName)}>
               <div className="compatibility-finder__selector px-6 pt-6">
-                <TabsList className="flex h-auto w-full flex-wrap justify-center gap-2 bg-transparent p-0">
+                <TabsList className="flex !h-auto w-full flex-wrap justify-center gap-2 bg-transparent p-0">
                   {brands.map((brand) => (
                     <TabsTrigger
                       key={brand}
                       value={brand}
-                      className="cursor-pointer rounded-full border border-border/60 px-5 py-2 text-sm font-semibold data-active:border-primary data-active:bg-primary data-active:text-white data-active:shadow-md"
+                      className="cursor-pointer rounded-full border border-border/60 px-5 py-2 !h-auto text-sm font-semibold data-active:border-primary data-active:bg-primary data-active:text-white data-active:shadow-md"
                     >
                       {brand}
                     </TabsTrigger>
