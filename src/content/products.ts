@@ -5,7 +5,7 @@ export const productCategories = [
     title: "Contrast Media",
     description:
       "Complete Vandan Distributors range - non-ionic, ionic, iso-osmolar, and MRI contrast agents for CT, angiography, and MRI imaging.",
-    image: "/images/contrast-media/contrapaque-350-mg-200ml.jpg",
+    image: "/images/contrast-media/lohexol-injection-usp-350-mg-200-ml.jpg",
     tag: "Contrast Media",
   },
   {
