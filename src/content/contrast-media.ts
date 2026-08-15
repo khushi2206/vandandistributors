@@ -244,7 +244,7 @@ export const contrastProducts: ContrastProduct[] = [
   },
   {
     id: "gadotrast",
-    name: "Gadoteric Acid Injection USP",
+    name: "Gadopentetate Dimeglumine Injection USP",
     activeIngredient: "Gadoteric Acid (Macrocyclic)",
     category: "mri",
     subcategory: "Macrocyclic MRI Contrast Media",
@@ -266,7 +266,7 @@ export const contrastSpecsTable = [
   { product: "Diatrizoate Meglumine Injection USP 60%", ingredient: "Meglumine Diatrizoate 60% w/v", iodine: "282 mg/mL", pack: "20 mL amp, 50 mL vial, 100 mL vial" },
   { product: "Iodixanol Injection USP 320 mg", ingredient: "Iodixanol", iodine: "320 mg/mL", pack: "50 mL vial, 100 mL vial" },
   { product: "Gadopentetate Dimeglumine Injection USP", ingredient: "Gadopentetate Dimeglumine", iodine: "0.5 mmol/mL", pack: "10 mL vial, 20 mL vial" },
-  { product: "Gadoteric Acid Injection USP", ingredient: "Gadoteric Acid (Macrocyclic)", iodine: "0.5 mmol/mL", pack: "10 mL vial, 20 mL vial" },
+  { product: "Gadopentetate Dimeglumine Injection USP", ingredient: "Gadoteric Acid (Macrocyclic)", iodine: "0.5 mmol/mL", pack: "10 mL vial, 20 mL vial" },
   { product: "Diatrizoate Meglumine & Diatrizoate Sodium Oral Solution USP", ingredient: "Meglumine & Sodium Diatrizoate", iodine: "370 mg/mL", pack: "30 mL / 100 mL bottle" },
   { product: "Diatrizoate Sodium Oral Solution USP", ingredient: "Sodium Diatrizoate", iodine: "249.64 mg/mL", pack: "30 mL / 100 mL bottle" },
 ];
