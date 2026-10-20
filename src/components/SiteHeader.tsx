@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, MessageCircle, X, ChevronDown, Phone } from "lucide-react";
 import { site } from "@/content/site";
+import { generalEnquiryUrl } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -25,13 +26,26 @@ export function SiteHeader() {
 
   React.useEffect(() => {
     setMobileOpen(false);
+    setProductsOpen(false);
   }, [pathname]);
 
-  // Prevent body scroll when mobile menu is open
   React.useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
+
+  React.useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileOpen(false);
+        setProductsOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   const openDropdown = () => {
     if (dropdownTimerRef.current) clearTimeout(dropdownTimerRef.current);
@@ -42,9 +56,7 @@ export function SiteHeader() {
     dropdownTimerRef.current = setTimeout(() => setProductsOpen(false), 120);
   };
 
-  const whatsappHref = `https://api.whatsapp.com/send?phone=${site.brand.whatsappNumber}&text=${encodeURIComponent(
-    "Hello, I would like to know more about Vandan Distributors products."
-  )}`;
+  const whatsappHref = generalEnquiryUrl();
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -57,7 +69,7 @@ export function SiteHeader() {
         <Link className="site-brand" href="/" onClick={() => setMobileOpen(false)} aria-label="Vandan Distributors – Home">
           <Image
             src={site.brand.logo}
-            alt={site.brand.name}
+            alt=""
             width={44}
             height={44}
             priority
@@ -69,7 +81,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="site-nav" aria-label="Primary navigation">
+        <nav className="site-nav" aria-label="Primary">
           {site.nav.map((item) =>
             item.href === "/products" ? (
               <div
@@ -83,6 +95,8 @@ export function SiteHeader() {
                   className={cn("site-nav__link", isActive(item.href) && "site-nav__link--active")}
                   aria-haspopup="true"
                   aria-expanded={productsOpen}
+                  onFocus={openDropdown}
+                  onClick={() => setProductsOpen((open) => !open)}
                 >
                   {item.label}
                   <ChevronDown className={cn("size-3.5 opacity-60 transition-transform duration-200", productsOpen && "rotate-180")} />
@@ -94,10 +108,12 @@ export function SiteHeader() {
                     onMouseEnter={openDropdown}
                     onMouseLeave={closeDropdown}
                   >
-                    <Link href="/products" role="menuitem" onClick={() => setProductsOpen(false)}>All Products</Link>
-                    {site.productNav.map((p) => (
-                      <Link key={p.href} href={p.href} role="menuitem" onClick={() => setProductsOpen(false)}>
-                        {p.label}
+                    <Link href="/products" role="menuitem" onClick={() => setProductsOpen(false)}>
+                      All Products
+                    </Link>
+                    {site.productNav.map((product) => (
+                      <Link key={product.href} href={product.href} role="menuitem" onClick={() => setProductsOpen(false)}>
+                        {product.label}
                       </Link>
                     ))}
                   </div>
@@ -117,17 +133,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="site-header__actions">
-          <a
-            href={site.brand.phoneHref}
-            className="site-header__phone"
-            aria-label={`Call us at ${site.brand.phone}`}
-          >
-            <Phone className="size-3.5" />
+          <a href={site.brand.phoneHref} className="site-header__phone" aria-label={`Call us at ${site.brand.phone}`}>
+            <Phone className="size-3.5" aria-hidden="true" />
             <span>{site.brand.phone}</span>
           </a>
           <Button
             render={
-              <a href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Chat with us on WhatsApp">
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
                 <MessageCircle className="size-4" data-icon="inline-start" />
                 WhatsApp Us
               </a>
@@ -148,7 +160,6 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* Mobile nav overlay */}
       {mobileOpen && (
         <div
           className="site-mobile-nav__backdrop"
@@ -161,8 +172,9 @@ export function SiteHeader() {
         className={cn("site-mobile-nav", mobileOpen && "site-mobile-nav--open")}
         id="mobile-nav"
         role="navigation"
-        aria-label="Mobile navigation"
+        aria-label="Mobile"
         aria-hidden={!mobileOpen}
+        inert={!mobileOpen}
       >
         <div className="site-mobile-nav__inner">
           {site.nav.map((item) => (
@@ -172,24 +184,31 @@ export function SiteHeader() {
               onClick={() => setMobileOpen(false)}
               className={cn("site-mobile-nav__link", isActive(item.href) && "site-mobile-nav__active")}
               aria-current={isActive(item.href) ? "page" : undefined}
+              tabIndex={mobileOpen ? 0 : -1}
             >
               {item.label}
             </Link>
           ))}
           <div className="site-mobile-nav__divider" />
           <p className="site-mobile-nav__section-label">Products</p>
-          {site.productNav.map((p) => (
-            <Link key={p.href} href={p.href} onClick={() => setMobileOpen(false)} className="site-mobile-nav__sub">
-              {p.label}
+          {site.productNav.map((product) => (
+            <Link
+              key={product.href}
+              href={product.href}
+              onClick={() => setMobileOpen(false)}
+              className="site-mobile-nav__sub"
+              tabIndex={mobileOpen ? 0 : -1}
+            >
+              {product.label}
             </Link>
           ))}
           <div className="site-mobile-nav__divider" />
-          <a href={site.brand.phoneHref} className="site-mobile-nav__phone">
-            <Phone className="size-4" />
+          <a href={site.brand.phoneHref} className="site-mobile-nav__phone" tabIndex={mobileOpen ? 0 : -1}>
+            <Phone className="size-4" aria-hidden="true" />
             {site.brand.phone}
           </a>
-          <a href={whatsappHref} target="_blank" rel="noreferrer" className="site-mobile-nav__whatsapp">
-            <MessageCircle className="size-4" />
+          <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="site-mobile-nav__whatsapp" tabIndex={mobileOpen ? 0 : -1}>
+            <MessageCircle className="size-4" aria-hidden="true" />
             Chat on WhatsApp
           </a>
           <div className="site-mobile-nav__hours">

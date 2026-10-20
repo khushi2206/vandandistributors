@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
-import { site } from "@/content/site";
 import {
   mipsOverview,
   printingSolutions,
@@ -14,12 +13,14 @@ import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CTASection } from "@/components/CTASection";
 import { FadeIn, StaggerGrid, StaggerItem } from "@/components/FadeIn";
+import { EnquireButton } from "@/components/EnquireButton";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: `Solutions | ${site.brand.name}`,
+  title: "Solutions",
   description: "Medical Imaging Print Solutions (MIPS) - MRI, CT, Ultrasound, X-Ray, and PET-CT printing with per-print billing and zero capex.",
+  alternates: { canonical: "/products/printing-solutions" },
 };
 
 export default function PrintingSolutionsPage() {
@@ -115,6 +116,7 @@ export default function PrintingSolutionsPage() {
                       </div>
                     </div>
                   ) : null}
+                  <EnquireButton productName={solution.title} />
                 </CardContent>
               </Card>
             </FadeIn>

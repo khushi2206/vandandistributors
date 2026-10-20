@@ -11,8 +11,14 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: `About Us | ${site.brand.name}`,
+  title: "About Us",
   description: site.about.overview,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: `About Us | ${site.brand.name}`,
+    description: site.about.overview,
+    url: "/about",
+  },
 };
 
 export default function AboutPage() {
@@ -73,6 +79,12 @@ export default function AboutPage() {
               From contrast media supply to complete MIPS deployments, Vandan Distributors delivers end-to-end support with
               transparent per-print pricing and responsive technical guidance.
             </p>
+            <div className="about-inline-links">
+              <Link href="/products/contrast-media">Contrast media</Link>
+              <Link href="/products/x-ray-films">X-ray films</Link>
+              <Link href="/products/printing-solutions">MIPS solutions</Link>
+              <Link href="/contact">Contact</Link>
+            </div>
           </div>
           <Button
             render={

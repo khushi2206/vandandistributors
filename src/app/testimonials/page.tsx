@@ -7,8 +7,14 @@ import { TestimonialCard } from "@/components/TestimonialCard";
 import { CTASection } from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: `Testimonials | ${site.brand.name}`,
+  title: "Testimonials",
   description: "Customer testimonials from hospitals, diagnostic centres, and healthcare buyers across India.",
+  alternates: { canonical: "/testimonials" },
+  openGraph: {
+    title: `Testimonials | ${site.brand.name}`,
+    description: "Customer testimonials from hospitals, diagnostic centres, and healthcare buyers across India.",
+    url: "/testimonials",
+  },
 };
 
 export default function GoogleReviewsPage() {

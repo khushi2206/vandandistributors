@@ -7,8 +7,14 @@ import { CategoryCard } from "@/components/CategoryCard";
 import { CTASection } from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: `Products | ${site.brand.name}`,
+  title: "Products",
   description: "Contrast media, X-ray films, MIPS, and diagnostic consumables for hospitals and diagnostic centres.",
+  alternates: { canonical: "/products" },
+  openGraph: {
+    title: `Products | ${site.brand.name}`,
+    description: "Contrast media, X-ray films, MIPS, and diagnostic consumables for hospitals and diagnostic centres.",
+    url: "/products",
+  },
 };
 
 export default function ProductsPage() {

@@ -3,6 +3,7 @@ import { Inter, Outfit } from "next/font/google";
 import { site } from "@/content/site";
 import "./globals.css";
 import "./site-pages.css";
+import "./improvements.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,33 +28,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: site.brand.title,
-    template: `%s | Vandan Distributors`,
+    template: `%s | ${site.brand.name}`,
   },
   description: site.brand.description,
-  keywords: [
-    "contrast media",
-    "x-ray films",
-    "dry imaging films",
-    "MIPS medical imaging",
-    "radiology supplies India",
-    "diagnostic films",
-    "medical imaging solutions",
-    "MRI CT films",
-    "radiology consumables",
-    "Vandan Distributors",
-    "Gujarat radiology supplier",
-    "hospital imaging supplies",
-    "Lohexol injection",
-    "iodinated contrast media",
-    "per-print billing radiology",
-  ],
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true },
   },
   alternates: {
-    canonical: siteUrl,
+    canonical: "/",
   },
   openGraph: {
     title: site.brand.title,
@@ -62,7 +46,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: site.brand.name,
-    url: siteUrl,
+    url: "/",
   },
   twitter: {
     card: "summary_large_image",
@@ -74,7 +58,6 @@ export const metadata: Metadata = {
     icon: site.brand.logo,
     apple: site.brand.logo,
   },
-  verification: {},
 };
 
 export const viewport: Viewport = {
@@ -105,11 +88,6 @@ const jsonLd = {
     postalCode: "384315",
     addressCountry: "IN",
   },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: "23.7042",
-    longitude: "72.5484",
-  },
   hasMap: site.brand.mapsLink,
   openingHoursSpecification: [
     {
@@ -120,7 +98,6 @@ const jsonLd = {
     },
   ],
   image: siteUrl + site.brand.logo,
-  priceRange: "₹₹",
   areaServed: {
     "@type": "Country",
     name: "India",
@@ -136,8 +113,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           rel="preload"
           href="/images/radiology-hero-banner.png"

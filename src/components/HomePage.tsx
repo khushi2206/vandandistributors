@@ -25,6 +25,7 @@ import {
 import { productCategories } from "@/content/products";
 import { site } from "@/content/site";
 import { testimonials } from "@/content/testimonials";
+import { consultationUrl } from "@/lib/whatsapp";
 
 const printImages = {
   heroPrimary: "/images/products/WhatsApp-Image-2026-06-10-at-11.41.55-PM.jpeg",
@@ -52,10 +53,10 @@ const partnerStats = [
 ];
 
 const trustBadges = [
-  { icon: Clock, label: "Since 2007", sub: "17+ years experience" },
-  { icon: MapPin, label: "Pan India Delivery", sub: "All major states" },
-  { icon: Award, label: "Healthcare Trusted", sub: "Hospitals & clinics" },
-  { icon: ShieldCheck, label: "Quality Assured", sub: "Diagnostic-grade" },
+  { icon: Clock, label: "Since 2007", sub: "Operating from Visnagar" },
+  { icon: MapPin, label: "Pan India support", sub: "Hospitals & centres" },
+  { icon: Award, label: "MIPS model", sub: "Pay per print" },
+  { icon: ShieldCheck, label: "Radiology focus", sub: "Films & contrast" },
 ];
 
 const reasons = [
@@ -123,8 +124,14 @@ const printingHighlights = [
 ];
 
 const manufacturers = [
-  "Agfa", "Fujifilm", "Carestream", "Kodak", "Bayer", "GE Healthcare",
-  "Bracco", "Guerbet", "Siemens Healthineers", "Konica Minolta",
+  "Fuji Dry Imaging Film",
+  "Accurate Diagnostic Film",
+  "VMS Manual X-Ray Film",
+  "Iohexol contrast",
+  "Iopamidol contrast",
+  "Iodixanol contrast",
+  "Gadopentetate MRI contrast",
+  "Oral contrast solutions",
 ];
 
 // Duplicate for infinite marquee
@@ -137,9 +144,7 @@ function getInitials(name: string) {
 
 export function HomePage() {
 
-  const whatsappHref = `https://api.whatsapp.com/send?phone=${site.brand.whatsappNumber}&text=${encodeURIComponent(
-    "Hello, I want a product consultation for Vandan Distributors."
-  )}`;
+  const whatsappHref = consultationUrl();
 
   return (
     <div className="vandan-home">
@@ -165,7 +170,7 @@ export function HomePage() {
               <h1>{site.hero.headline}</h1>
               <p>{site.hero.lede}</p>
               <div className="vandan-hero__actions">
-                <a className="vandan-btn vandan-btn--whatsapp" href={whatsappHref} target="_blank" rel="noreferrer">
+                <a className="vandan-btn vandan-btn--whatsapp" href={whatsappHref} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="size-4" />
                   Request Consultation
                 </a>
@@ -333,7 +338,7 @@ export function HomePage() {
         <h2>Tell us your modality — we&apos;ll respond within 24 hours.</h2>
         <p>Share your print volume, film size, or contrast requirement and get a tailored quote.</p>
         <div className="vandan-midcta__actions">
-          <a className="vandan-btn vandan-btn--whatsapp" href={whatsappHref} target="_blank" rel="noreferrer">
+          <a className="vandan-btn vandan-btn--whatsapp" href={whatsappHref} target="_blank" rel="noopener noreferrer">
             <MessageCircle className="size-4" />
             WhatsApp for a Quote
           </a>
@@ -381,8 +386,8 @@ export function HomePage() {
       {/* ── Manufacturer Brands Marquee ── */}
       <section className="vandan-brands" aria-label="Brands and manufacturers we work with">
         <motion.div className="vandan-section__heading" {...reveal}>
-          <p className="vandan-eyebrow">Brands we work with</p>
-          <h2>Trusted manufacturer partnerships across imaging modalities.</h2>
+          <p className="vandan-eyebrow">Catalogue brands</p>
+          <h2>Film and contrast lines available through Vandan Distributors.</h2>
         </motion.div>
         <div className="vandan-brands__marquee-wrap" aria-hidden="true">
           <div className="vandan-brands__marquee">
@@ -456,7 +461,7 @@ export function HomePage() {
             We will help you choose the right product path.
           </p>
           <div className="vandan-cta__actions">
-            <a className="vandan-btn vandan-btn--whatsapp" href={whatsappHref} target="_blank" rel="noreferrer">
+            <a className="vandan-btn vandan-btn--whatsapp" href={whatsappHref} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="size-4" />
               Chat on WhatsApp
             </a>
@@ -474,7 +479,7 @@ export function HomePage() {
 
       {/* ── Floating consult buttons ── */}
       <div className="floating-consult" aria-label="Quick contact shortcuts">
-        <a href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Open WhatsApp consultation" className="floating-consult__whatsapp">
+        <a href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp consultation" className="floating-consult__whatsapp">
           <MessageCircle className="size-5" />
           <span className="floating-consult__tooltip">WhatsApp Us</span>
         </a>
@@ -488,7 +493,7 @@ export function HomePage() {
       <a
         href={whatsappHref}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         className="vandan-side-tab"
         aria-label="Quick WhatsApp enquiry"
       >
@@ -502,7 +507,7 @@ export function HomePage() {
           <Phone className="size-4" />
           Call Us
         </a>
-        <a href={whatsappHref} target="_blank" rel="noreferrer" className="vandan-mobile-sticky__btn vandan-mobile-sticky__btn--wa">
+        <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="vandan-mobile-sticky__btn vandan-mobile-sticky__btn--wa">
           <MessageCircle className="size-4" />
           WhatsApp
         </a>

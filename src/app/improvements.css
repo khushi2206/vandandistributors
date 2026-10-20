@@ -1,0 +1,371 @@
+/* Final consistency, accessibility, and responsive overlay */
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 200;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: #17231f;
+  color: #fffdf8;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.site-header {
+  display: block;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 3.6rem;
+}
+
+.site-brand,
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.site-header__phone {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #294d44;
+  white-space: nowrap;
+}
+
+.site-header__phone:hover,
+.site-header__phone:focus-visible,
+.site-nav__link:focus-visible,
+.site-nav__menu a:focus-visible,
+.site-header__menu-btn:focus-visible,
+.site-header__cta:focus-visible,
+.vandan-btn:focus-visible,
+.enquire-btn:focus-visible,
+.contact-form__submit:focus-visible,
+.site-footer a:focus-visible,
+.vandan-mobile-sticky__btn:focus-visible,
+.download-card:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 3px;
+}
+
+@media (min-width: 1180px) {
+  .site-header__phone {
+    display: inline-flex;
+  }
+}
+
+.site-header__menu-btn {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+}
+
+.site-mobile-nav {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: auto !important;
+  width: min(85vw, 360px) !important;
+  height: 100dvh !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  display: block !important;
+}
+
+.site-mobile-nav--open {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.site-footer__col h2,
+.site-footer__col h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(240, 249, 255, 0.5);
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.vandan-hero h1 {
+  font-size: clamp(1.85rem, 6.4vw, 4.4rem) !important;
+  line-height: 1.08 !important;
+}
+
+.vandan-hero__content p:not(.vandan-eyebrow) {
+  font-size: clamp(0.95rem, 2.4vw, 1.15rem) !important;
+}
+
+.vandan-hero__actions .vandan-btn,
+.vandan-cta__actions .vandan-btn,
+.vandan-midcta__actions .vandan-btn,
+.enquire-btn,
+.contact-form__submit,
+.vandan-mobile-sticky__btn {
+  min-height: 2.85rem;
+}
+
+.vandan-btn--whatsapp,
+.enquire-btn {
+  background: linear-gradient(135deg, #25d366, #1ea952) !important;
+  color: #fff !important;
+  border: 1px solid transparent;
+}
+
+.vandan-btn--ghost {
+  background: rgba(255, 253, 248, 0.12) !important;
+  color: inherit;
+  border: 1px solid rgba(23, 35, 31, 0.12);
+}
+
+.vandan-section,
+.medical-section {
+  overflow-x: clip;
+}
+
+.product-grid,
+.category-grid,
+.testimonials-grid,
+.downloads-grid,
+.printing-solutions-grid,
+.vandan-featured-grid,
+.vandan-category-grid,
+.vandan-testimonial-grid {
+  align-items: stretch;
+}
+
+.product-card,
+.film-product-card,
+.printing-solution-card,
+.category-card,
+.download-card,
+.testimonial-card,
+.vandan-featured-card,
+.vandan-category-card {
+  height: 100%;
+}
+
+.product-card__image-container,
+.film-product-card .product-card__image-container,
+.printing-solution-card .product-card__image-container,
+.vandan-featured-card__image,
+.vandan-category-card__image {
+  aspect-ratio: 4 / 3;
+  background: #fff;
+}
+
+.vandan-featured-card__image img,
+.vandan-category-card__image img,
+.product-card img,
+.film-product-card img {
+  object-fit: contain;
+}
+
+.download-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.15rem 1.2rem;
+  border-radius: 18px;
+  min-height: 100%;
+  text-decoration: none;
+}
+
+.download-card strong {
+  font-size: 1.05rem;
+}
+
+.download-card p {
+  flex: 1;
+  font-size: 0.92rem;
+}
+
+.download-card__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(15, 118, 110, 0.1);
+  color: #0f766e;
+}
+
+.download-card__cta,
+.enquire-btn {
+  margin-top: auto;
+  font-weight: 700;
+  width: 100%;
+}
+
+.downloads-group-title {
+  width: min(100% - (var(--site-gutter) * 2), var(--site-container));
+  margin: 0 auto 1rem;
+  font-size: 1.35rem;
+}
+
+.about-inline-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.about-inline-links a {
+  min-height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.08);
+  color: #0f766e;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.contact-form__honeypot {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+}
+
+.contact-form__error,
+.contact-form__banner {
+  color: #b42318;
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+.contact-form__banner {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 12px;
+  background: #fff1f0;
+}
+
+.contact-form__hint {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+}
+
+.contact-form-success__fallbacks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.contact-form-success__fallbacks a {
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.not-found {
+  width: min(100% - (var(--site-gutter) * 2), 42rem);
+  margin: clamp(3rem, 8vw, 6rem) auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.not-found__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.vandan-brands__chip {
+  max-width: min(18rem, 80vw);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 639px) {
+  .site-main {
+    padding-bottom: 4.5rem;
+  }
+
+  .vandan-hero {
+    padding-inline: 0.75rem;
+  }
+
+  .vandan-hero__banner {
+    min-height: min(34rem, calc(100svh - 7rem)) !important;
+    border-radius: 18px !important;
+  }
+
+  .vandan-hero__actions {
+    display: grid;
+    width: 100%;
+  }
+
+  .vandan-hero__actions .vandan-btn,
+  .enquire-btn {
+    width: 100%;
+  }
+
+  .site-brand__text small {
+    max-width: 9.5rem;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 424px) {
+  .vandan-hero h1 {
+    font-size: clamp(1.55rem, 8vw, 2.1rem) !important;
+  }
+
+  .vandan-mobile-sticky__btn {
+    font-size: 0.68rem;
+    padding-inline: 0.25rem;
+  }
+}
+
+@media (max-width: 319px) {
+  html {
+    overflow-x: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

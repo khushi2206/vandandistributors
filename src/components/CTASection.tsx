@@ -2,6 +2,7 @@
 
 import { Mail, MessageCircle, Phone } from "lucide-react";
 import { site } from "@/content/site";
+import { whatsappUrl } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/FadeIn";
 
@@ -14,9 +15,9 @@ export function CTASection({
   title = site.contact.headline,
   description = site.contact.subheadline,
 }: CTASectionProps) {
-  const whatsappHref = `https://api.whatsapp.com/send?phone=${site.brand.whatsappNumber}&text=${encodeURIComponent(
+  const whatsappHref = whatsappUrl(
     "Hello, I would like to discuss my radiology requirements with Vandan Distributors."
-  )}`;
+  );
 
   return (
     <FadeIn className="medical-section">
@@ -26,7 +27,7 @@ export function CTASection({
         <div className="medical-cta-actions">
           <Button
             render={
-              <a href={whatsappHref} target="_blank" rel="noreferrer">
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="size-4" data-icon="inline-start" />
                 {site.contact.ctaWhatsApp}
               </a>

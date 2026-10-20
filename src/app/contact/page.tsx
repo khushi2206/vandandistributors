@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { site } from "@/content/site";
 import { PageShell } from "@/components/PageShell";
 import { PageHero } from "@/components/PageHero";
@@ -10,8 +10,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: `Contact | ${site.brand.name}`,
+  title: "Contact",
   description: "Contact Vandan Distributors for product enquiries, MIPS demos, and bulk supply quotes.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: `Contact | ${site.brand.name}`,
+    description: "Contact Vandan Distributors for product enquiries, MIPS demos, and bulk supply quotes.",
+    url: "/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -62,6 +68,13 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="contact-info-item">
+                    <Clock className="size-5 text-[var(--color-medical)]" />
+                    <div>
+                      <strong>Hours</strong>
+                      <span>Monday – Saturday, 9:30 AM – 6:30 PM</span>
+                    </div>
+                  </div>
+                  <div className="contact-info-item">
                     <MapPin className="size-5 text-[var(--color-medical)]" />
                     <div>
                       <strong>Location</strong>
@@ -73,7 +86,7 @@ export default function ContactPage() {
                   </div>
                   <Button
                     render={
-                      <a href={whatsappHref} target="_blank" rel="noreferrer">
+                      <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
                         <MessageCircle className="size-4" data-icon="inline-start" />
                         WhatsApp Inquiry
                       </a>

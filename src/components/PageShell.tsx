@@ -9,9 +9,14 @@ type PageShellProps = {
 export function PageShell({ children }: PageShellProps) {
   return (
     <div className="medical-site">
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <AmbientBackground />
       <SiteHeader />
-      <main className="site-main">{children}</main>
+      <main id="main-content" className="site-main" tabIndex={-1}>
+        {children}
+      </main>
       <SiteFooter />
     </div>
   );

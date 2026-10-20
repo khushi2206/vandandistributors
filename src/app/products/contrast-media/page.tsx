@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { site } from "@/content/site";
 import { contrastProducts, contrastCategories, contrastSpecsTable } from "@/content/contrast-media";
 import { PageShell } from "@/components/PageShell";
 import { PageHero } from "@/components/PageHero";
@@ -11,8 +10,9 @@ import { FlaskConical, PackageCheck, TestTube2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: `Contrast Media | ${site.brand.name}`,
+  title: "Contrast Media",
   description: "Contrast media portfolio - non-ionic, ionic, iso-osmolar, and MRI contrast agents for CT, angiography, and MRI imaging.",
+  alternates: { canonical: "/products/contrast-media" },
 };
 
 export default function ContrastMediaPage() {

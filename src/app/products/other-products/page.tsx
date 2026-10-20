@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { site } from "@/content/site";
 import { otherProducts, otherProductCategories } from "@/content/other-products";
 import { PageShell } from "@/components/PageShell";
 import { PageHero } from "@/components/PageHero";
@@ -8,8 +7,9 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { CTASection } from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: `Other Products | ${site.brand.name}`,
+  title: "Other Products",
   description: "Barium preparations, injector accessories, ultrasound gel, ECG paper, endoscopy rolls, and radiology consumables.",
+  alternates: { canonical: "/products/other-products" },
 };
 
 export default function OtherProductsPage() {

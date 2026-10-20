@@ -44,7 +44,7 @@ export const site = {
     eyebrow: "Medical Imaging Solutions (MIPS)",
     headline: "Precision radiology supplies for accurate diagnostics.",
     lede:
-      "Contrast media, diagnostic films, and end-to-end medical imaging solutions - trusted by hospitals, diagnostic centres, and radiology teams across India. Operating Since 2007.",
+      "Contrast media, diagnostic films, and MIPS for hospitals and diagnostic centres across India. Operating since 2007 — no capital expense on the per-print model.",
     ctaPrimary: "Request a Quote",
     ctaSecondary: "Explore Products",
   },

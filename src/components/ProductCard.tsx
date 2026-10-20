@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/FadeIn";
-import { site } from "@/content/site";
+import { productEnquiryUrl } from "@/lib/whatsapp";
 
 type ProductCardProps = {
   title: string;
@@ -29,9 +29,7 @@ export function ProductCard({
   usedFor,
   delay = 0,
 }: ProductCardProps) {
-  const whatsappHref = `https://api.whatsapp.com/send?phone=${site.brand.whatsappNumber}&text=${encodeURIComponent(
-    `Hello, I would like to inquire about ${title}.`
-  )}`;
+  const whatsappHref = productEnquiryUrl(title);
 
   return (
     <FadeIn delay={delay}>
@@ -94,7 +92,7 @@ export function ProductCard({
         <CardFooter className="mt-auto flex-col gap-2 pt-0 sm:flex-row w-full">
           <Button
             render={
-              <a href={whatsappHref} target="_blank" rel="noreferrer">
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="size-4" data-icon="inline-start" />
                 Enquire
               </a>

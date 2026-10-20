@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { site } from "@/content/site";
 import { dryFilmProducts, vmsManualFilms } from "@/content/xray-films";
 import { PageShell } from "@/components/PageShell";
 import { PageHero } from "@/components/PageHero";
@@ -8,12 +7,14 @@ import { XRayCompatibility } from "@/components/XRayCompatibility";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CTASection } from "@/components/CTASection";
 import { FadeIn } from "@/components/FadeIn";
+import { EnquireButton } from "@/components/EnquireButton";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: `X-Ray Films | ${site.brand.name}`,
+  title: "X-Ray Films",
   description: "Dry imaging films and manual X-ray films for laser imagers, thermal imagers, and conventional processing.",
+  alternates: { canonical: "/products/x-ray-films" },
 };
 
 export default function XRayFilmsPage() {
@@ -54,6 +55,7 @@ export default function XRayFilmsPage() {
                     </div>
                   </div>
                   <p className="text-sm leading-relaxed text-muted-foreground">{film.specs}</p>
+                  <EnquireButton productName={film.name} />
                 </CardContent>
               </Card>
             </FadeIn>
@@ -97,6 +99,7 @@ export default function XRayFilmsPage() {
                   </strong>
                   <p className="text-sm leading-relaxed">{vmsManualFilms.specs}</p>
                 </div>
+                <EnquireButton productName={vmsManualFilms.title} />
               </CardContent>
             </div>
           </Card>

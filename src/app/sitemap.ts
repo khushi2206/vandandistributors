@@ -1,0 +1,25 @@
+import type { MetadataRoute } from "next";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://vandandistributors.com";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const routes = [
+    "",
+    "/about",
+    "/products",
+    "/products/contrast-media",
+    "/products/x-ray-films",
+    "/products/other-products",
+    "/products/printing-solutions",
+    "/testimonials",
+    "/contact",
+    "/downloads",
+  ];
+
+  return routes.map((path) => ({
+    url: `${siteUrl}${path}`,
+    lastModified: new Date(),
+    changeFrequency: path === "" ? "weekly" : "monthly",
+    priority: path === "" ? 1 : path.startsWith("/products") ? 0.8 : 0.6,
+  }));
+}
